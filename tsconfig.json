@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "downlevelIteration": true
+  }
+}
