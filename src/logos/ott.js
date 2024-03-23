@@ -5,7 +5,7 @@ const OTT = props => {
   const { size } = props;
   return (
     <svg
-      enable-background="new 0 0 212.204 250"
+      enableBackground="new 0 0 212.204 250"
       height={size}
       viewBox="0 0 212.204 250"
       width={size}

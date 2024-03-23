@@ -9,6 +9,8 @@ import * as d3 from "d3";
 export type HeatmapProps = {
   width: number;
   height: number;
+  x_Label: string;
+  y_Label: string;
   data: { x: string; y: string; value: number }[];
   max: number;
 };
@@ -24,7 +26,7 @@ export type InteractionData = {
 
 
 
-export const Heatmap = ({ width, height, data, max }: HeatmapProps) => {
+export const Heatmap = ({ width, height, x_Label, y_Label, data, max }: HeatmapProps) => {
   const [hoveredCell, setHoveredCell] = useState<InteractionData | null>(null);
 
   var legendWidth = width;
@@ -94,6 +96,8 @@ legendsvg.append("g").attr("class", "axis").attr("transform", "translate(0," + (
       <Renderer
         width={width}
         height={height}
+        x_Label={x_Label}
+        y_Label={y_Label}
         data={data}
         setHoveredCell={setHoveredCell}
       />

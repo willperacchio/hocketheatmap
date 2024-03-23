@@ -9,6 +9,8 @@ const MARGIN = { top: 10, right: 50, bottom: 30, left: 50 };
 type RendererProps = {
   width: number;
   height: number;
+  x_Label: string;
+  y_Label: string;
   data: { x: string; y: string; value: number }[];
   setHoveredCell: (hoveredCell: InteractionData | null) => void;
 };
@@ -16,6 +18,8 @@ type RendererProps = {
 export const Renderer = ({
   width,
   height,
+  x_Label,
+  y_Label,
   data,
   setHoveredCell,
 }: RendererProps) => {
@@ -64,6 +68,7 @@ export const Renderer = ({
 
     return (
         <text
+            key={"text_x_" + d.x + "_y_" + d.y}
             x={xScale(d.x) + xScale.bandwidth()/2}
             y={yScale(d.y) + yScale.bandwidth()/2 + + yScale.bandwidth()/20}
             textAnchor="middle"
@@ -100,8 +105,8 @@ export const Renderer = ({
         stroke={"white"}
         onMouseEnter={(e) => {
           setHoveredCell({
-            xLabel: "Home Team Score: " + d.x,
-            yLabel: "Away Team Score " + d.y,
+            xLabel: x_Label + d.x,
+            yLabel: y_Label + d.y,
             xPos: x + xScale.bandwidth() + MARGIN.left,
             yPos: y + xScale.bandwidth() / 2 + MARGIN.top,
             value: Math.round(d.value * 100) / 100,

@@ -1,31 +1,9 @@
 import React from "react";
 import { HeatmapProps } from "./Heatmap";
 
-export default function DataProcessing (data_og, teams, years, types) {
+export function DataViz (og) {
   const nCol = 11;
   const nRow = 11;
-
-  let og = [];
-  // console.log("processing")
-  // console.log(teams, years, types)
-
-  for (const [t, t_val] of Object.entries(types)) {
-    if (t_val) {
-      for (const [y, y_val] of Object.entries(years)) {
-        if (y_val) {
-          let szn =  y + "_" + t;
-          // console.log(data_og)
-          for (let q = 0; q < data_og[szn]["games"].length; q++) {
-            // console.log(szn)
-            if (teams[data_og[szn]["games"][q]["home"]["alias"]] || teams[data_og[szn]["games"][q]["away"]["alias"]]) {
-              og.push([data_og[szn]["games"][q]["home_points"], data_og[szn]["games"][q]["away_points"]])
-            }
-          }
-        }
-      }
-    }
-  }
-  
 
   let vals = {};
 
@@ -56,4 +34,60 @@ export default function DataProcessing (data_og, teams, years, types) {
   }
 
   return data;
+}
+
+export default function DataProcessing (data_og, checks) {
+  // console.log("checks", checks)
+
+  let teams = checks["teams"];
+  let years = checks["years"];
+  let months = checks["months"];
+  let weekdays = checks["weekdays"];
+  let types = checks["types"];
+  let homeAway = checks["homeawaysplit"]
+
+  let games = [];
+  let og = [];
+  // console.log("processing")
+  // console.log(teams, years, types)
+
+  for (const [t, t_val] of Object.entries(types)) {
+    if (t_val) { // Check season type
+      for (const [y, y_val] of Object.entries(years)) {
+        if (y_val) { // Check year
+          let szn =  y + "_" + t;
+          // console.log(data_og)
+          // console.log(szn)
+          for (let q = 0; q < data_og[szn]["games"].length; q++) { // Check games
+            if (months[data_og[szn]["games"][q]["scheduled"].substring(5, 7)]) { // Check Month
+              let weekday = new Date(data_og[szn]["games"][q]["scheduled"]).getDay();
+              // console.log(weekday)
+              if (weekdays[weekday]) { // Check Weekday
+                if (teams[data_og[szn]["games"][q]["home"]["alias"]] || teams[data_og[szn]["games"][q]["away"]["alias"]]) { // Check teams
+                  if (data_og[szn]["games"][q]["status"] == "closed") {
+                    games.push(data_og[szn]["games"][q])
+                    if (homeAway) {
+                      og.push([data_og[szn]["games"][q]["home_points"], data_og[szn]["games"][q]["away_points"]])
+                    } else {
+                      if (data_og[szn]["games"][q]["home_points"] >= data_og[szn]["games"][q]["away_points"]) {
+                        // console.log(data_og[szn]["games"][q])
+                        og.push([data_og[szn]["games"][q]["away_points"], data_og[szn]["games"][q]["home_points"]])
+                      } else {
+                        og.push([data_og[szn]["games"][q]["home_points"], data_og[szn]["games"][q]["away_points"]])
+                      }
+                    }
+                  } else {
+                    // console.log(data_og[szn]["games"][q]["status"])
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  return [games, og];
 }

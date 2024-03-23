@@ -3,11 +3,13 @@ const fs = require("fs");
 function DataAggregation() {
     let years_list = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
     let d = {}
-    let type = ["REG"] // "PRE", "PST"
+    let type = ["REG", "PST"] // "PRE"
     for (let a = 0; a < years_list.length; a++) {
-      let fn = "./NHL" + years_list[a] + type[0] + ".json"
-      let temp = require(fn);
-      d[years_list[a] + "_" + type[0]] = temp;
+      for (let b = 0; b < type.length; b++) {
+        let fn = "./NHL" + years_list[a] + type[b] + ".json"
+        let temp = require(fn);
+        d[years_list[a] + "_" + type[b]] = temp;
+      }
     }
     console.log(d)
   

@@ -3,37 +3,55 @@ import './App.css';
 import React, { useState, setState, useEffect } from "react";
 import * as d3 from "d3";
 import { Heatmap, InteractionData } from './Heatmap.tsx';
-import DataProcessing from "./data.tsx";
+import DataProcessing, { DataViz } from "./data.tsx";
 import nhl from "./NHL.json"
 import Team from "./team.tsx";
 
 function App() {
-  let defaultChecked = true;
-  let teams_list = ["BOS", "BUF", "DET", "FLA", "MTL", "OTT", "TB", "TOR", "CAR", "CBJ", "NJ", "NYI", "NYR", "PHI", "PIT", "WSH", "ARI", "CHI", "COL", "DAL", "MIN", "NSH", "STL", "WPG", "ANA", "CGY", "EDM", "LA", "SJ", "SEA", "VAN", "VGK"]
-  let years_list = ["2016", "2017", "2018", "2019", "2020", "2021", "2022"]
-  let types_list = ["REG"];
-  let defTeams = {};
-  let defTypes = {};
-  let defYears = {};
+  const homeScoreText = "Home Score ";
+  const awayScoreText = "Away Score ";
+  const loserScoreText = "Loser Score ";
+  const winnerScoreText = "Winner Score ";
 
+  let defaultChecked = true;
+  let defHomeAwaySplit = true;
+  let teams_list = ["BOS", "BUF", "DET", "FLA", "MTL", "OTT", "TB", "TOR", "CAR", "CBJ", "NJ", "NYI", "NYR", "PHI", "PIT", "WSH", "ARI", "CHI", "COL", "DAL", "MIN", "NSH", "STL", "WPG", "ANA", "CGY", "EDM", "LA", "SJ", "SEA", "VAN", "VGK"]
+  let months_list = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+  let months_readable = { "01": "JAN", "02": "FEB", "03": "MAR", "04": "APR", "05": "MAY", "06": "JUN", "07": "JUL", "08": "AUG", "09": "SEP", "10": "OCT", "11": "NOV", "12":  "DEC"};
+  let weekdays_list   = ["0", "1", "2", "3", "4", "5", "6"]
+  let weekdays_readable = {"0": "SUN", "1": "MON", "2": "TUE", "3": "WED", "4": "THU", "5": "FRI", "6": "SAT"}
+  let years_list = ["2016", "2017", "2018", "2019", "2020", "2021", "2022"]
+  let types_list = ["REG", "PST"];
+  let types_readable = {"REG": "Regular Season", "PST": "Postseason"}
+
+  let defChecks = { "teams": {}, "years": {}, "months": {}, "weekdays": {}, "types": {}, "homeawaysplit": defHomeAwaySplit };
 
   for (let x = 0; x < teams_list.length; x++) {
-    defTeams[teams_list[x]] = defaultChecked;
+    defChecks["teams"][teams_list[x]] = defaultChecked;
   }
 
   for (let x = 0; x < years_list.length; x++) {
-    defYears[years_list[x]] = defaultChecked;
+    defChecks["years"][years_list[x]] = defaultChecked;
+  }
+
+  for (let x = 0; x < months_list.length; x++) {
+    defChecks["months"][months_list[x]] = defaultChecked;
+  }
+
+  for (let x = 0; x < weekdays_list.length; x++) {
+    defChecks["weekdays"][weekdays_list[x]] = defaultChecked;
   }
 
   for (let x = 0; x < types_list.length; x++) {
-    defTypes[types_list[x]] = defaultChecked
+    defChecks["types"][types_list[x]] = defaultChecked;
   }
 
-  const [teams, setTeams] = useState(defTeams);
-  const [years, setYears] = useState(defYears);
-  const [types, setTypes] = useState(defTypes);
-  const [data, setData] = useState(DataProcessing(nhl, defTeams, defYears, defTypes));
-  const [hmmax, setHmmax] = useState(getMax(DataProcessing(nhl, defTeams, defYears, defTypes)))
+  const [checks, setChecks] = useState(defChecks);
+  let eligibleGames = DataProcessing(nhl, defChecks)
+  const [displayGames, setDisplayGames] = useState([...eligibleGames[0]].slice(0, 50));
+  let processed = DataViz(eligibleGames[1]);
+  const [data, setData] = useState(processed);
+  const [hmmax, setHmmax] = useState(getMax(processed))
 
   function getMax (data) {
     return data.reduce((max, coord) => Math.max(max, coord["value"]), 0)
@@ -44,37 +62,46 @@ function App() {
   }, []) 
 
   function handleChange (e) {
-    console.log("EVENT");
-    console.log(e);
+    // console.log("EVENT");
+    // console.log(e);
 
-    let newTeams = {...teams}
+    let newChecks = {...checks}
+
     if (e != null && teams_list.indexOf(e.target.defaultValue) != -1) {
-      newTeams[e.target.value] = e.target.checked
+      newChecks["teams"][e.target.value] = e.target.checked
+    } else if (e != null && years_list.indexOf(e.target.defaultValue) != -1) {
+      newChecks["years"][e.target.value] = e.target.checked
+    } else if (e != null && months_list.indexOf(e.target.defaultValue) != -1) {
+      newChecks["months"][e.target.value] = e.target.checked
+    } else if (e != null && weekdays_list.indexOf(e.target.defaultValue) != -1) {
+      newChecks["weekdays"][e.target.value] = e.target.checked
+    } else if (e != null && types_list.indexOf(e.target.defaultValue) != -1) {
+      newChecks["types"][e.target.value] = e.target.checked
+    } else if (e != null && e.target.value == "homeawaysplit") {
+      newChecks["homeawaysplit"] = e.target.checked
     }
 
-    let newYears = {...years}
-    if (e != null && years_list.indexOf(e.target.defaultValue) != -1) {
-      newYears[e.target.value] = e.target.checked
-    }
-
-    let newTypes = types;
-
-    setTeams(newTeams)
-    setYears(newYears)
-    setTypes(newTypes)
-    setData(DataProcessing(nhl, newTeams, newYears, newTypes))
-    setHmmax(getMax(DataProcessing(nhl, newTeams, newYears, newTypes)))
+    setChecks(newChecks);
+    eligibleGames = DataProcessing(nhl, newChecks)
+    setDisplayGames([...eligibleGames][0].slice(0, 50))
+    let newprocessed = DataViz(eligibleGames[1])
+    setData(newprocessed)
+    setHmmax(getMax(newprocessed))
   };
 
   return (
     <div className="App">
       <header className="App-header">
         NHL
-        <div class="year_row">
+        <span className="checkbox"><input 
+              value="homeawaysplit" 
+              type="checkbox" 
+              defaultChecked={defaultChecked} 
+              onChange={handleChange}/>Home Away Split</span>
+        <div className="year_row">
         {
-          years_list.map((a) => <span class="year"><span className="checkbox">
+          years_list.map((a) => <span key={"year_" + a} className="year"><span className="checkbox">
             <input 
-              key={a} 
               value={a} 
               type="checkbox" 
               defaultChecked={defaultChecked} 
@@ -82,13 +109,57 @@ function App() {
             </span></span>)
         }
         </div>
+        <div className="month_row">
         {
-          [0, 1, 2, 3].map((a) => <div class="division_row">{teams_list.slice(a*8, a*8 + 8).map((tm, i) => Team(teams_list, defaultChecked, handleChange, a*8 + i))}</div>)
+          months_list.map((a) => <span key={"month_" + a} className="month"><span className="checkbox">
+            <input 
+              value={a} 
+              type="checkbox" 
+              defaultChecked={defaultChecked} 
+              onChange={handleChange}/>{months_readable[a]}
+            </span></span>)
+        }
+        </div>
+        <div className="weekday_row">
+        {
+          weekdays_list.map((a) => <span key={"weekday_" + a} className="weekday"><span className="checkbox">
+            <input 
+              value={a} 
+              type="checkbox" 
+              defaultChecked={defaultChecked} 
+              onChange={handleChange}/>{weekdays_readable[a]}
+            </span></span>)
+        }
+        </div>
+        <div className="type_row">
+        {
+          types_list.map((a) => <span key={"type_" + a} className="type"><span className="checkbox">
+            <input 
+              value={a} 
+              type="checkbox" 
+              defaultChecked={defaultChecked} 
+              onChange={handleChange}/>{types_readable[a]}
+            </span></span>)
+        }
+        </div>
+        {
+          [0, 1, 2, 3].map((a) => <div className="division_row">{teams_list.slice(a*8, a*8 + 8).map((tm, i) => Team(teams_list, defaultChecked, handleChange, a*8 + i))}</div>)
         }
         
-        <Heatmap data={data} width={700} height={700} max={hmmax}/>
+        <Heatmap data={data} width={700} height={700} x_Label={checks["homeawaysplit"] ? homeScoreText: loserScoreText} y_Label={checks["homeawaysplit"] ? awayScoreText: winnerScoreText} max={hmmax}/>
         <div>Number of Eligible Games: {data.reduce((n, coord) => n + coord["value"], 0)}</div>
         <div>Mode: {hmmax}</div>
+        <div>Games:
+          {
+            displayGames.map((game, key) => <div key={"game_" + key} className="game">
+              <div>{game.scheduled}</div>
+              
+              <div><span>{game.away.name} @ {game.home.name}</span></div>
+              <div><span>{game.away_points} - {game.home_points}</span></div>
+              </div> 
+            )
+          }
+        </div>
       </header>
     </div>
   );
