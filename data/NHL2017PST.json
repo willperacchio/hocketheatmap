@@ -1,0 +1,4046 @@
+{
+    "league": {
+        "id": "fd560107-a85b-4388-ab0d-655ad022aff7",
+        "name": "NHL",
+        "alias": "NHL"
+    },
+    "season": {
+        "id": "758579b1-6e4f-4bd7-a546-1591f39c461c",
+        "year": 2017,
+        "type": "PST"
+    },
+    "games": [
+        {
+            "id": "0322f108-3af5-4e07-a7a9-e3f826df0772",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-11T23:00:00+00:00",
+            "home_points": 7,
+            "away_points": 0,
+            "sr_id": "sr:match:14285567",
+            "reference": "30141",
+            "venue": {
+                "id": "09cab1a6-16ee-4ed9-aefa-c6cc24681b3b",
+                "name": "PPG Paints Arena",
+                "capacity": 18387,
+                "address": "1001 Fifth Ave.",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15219",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6052"
+            },
+            "home": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            },
+            "away": {
+                "id": "44179d47-0f24-11e2-8525-18a905767e44",
+                "name": "Philadelphia Flyers",
+                "alias": "PHI",
+                "seed": 6,
+                "sr_id": "sr:team:3699",
+                "reference": "4"
+            }
+        },
+        {
+            "id": "e2bc1c00-ea35-476e-88f3-12660021b49f",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-11T23:00:00+00:00",
+            "home_points": 3,
+            "away_points": 2,
+            "sr_id": "sr:match:14285539",
+            "reference": "30161",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "4416091c-0f24-11e2-8525-18a905767e44",
+                "name": "Minnesota Wild",
+                "alias": "MIN",
+                "seed": 4,
+                "sr_id": "sr:team:3689",
+                "reference": "30"
+            }
+        },
+        {
+            "id": "b25af7ca-35df-4e52-9bc3-98d9ba60dc2f",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-12T02:00:00+00:00",
+            "home_points": 1,
+            "away_points": 0,
+            "sr_id": "sr:match:14285551",
+            "reference": "30171",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44151f7a-0f24-11e2-8525-18a905767e44",
+                "name": "Los Angeles Kings",
+                "alias": "LA",
+                "seed": 7,
+                "sr_id": "sr:team:3688",
+                "reference": "26"
+            }
+        },
+        {
+            "id": "43e1bf6b-3214-488e-87fa-490c0c671206",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-12T23:00:00+00:00",
+            "home_points": 5,
+            "away_points": 2,
+            "sr_id": "sr:match:14286347",
+            "reference": "30111",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "44174b0c-0f24-11e2-8525-18a905767e44",
+                "name": "New Jersey Devils",
+                "alias": "NJ",
+                "seed": 8,
+                "sr_id": "sr:team:3704",
+                "reference": "1"
+            }
+        },
+        {
+            "id": "ad0dc658-4b78-44b8-a9c4-07f6999ccbd4",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-12T23:00:00+00:00",
+            "home_points": 5,
+            "away_points": 1,
+            "sr_id": "sr:match:14286355",
+            "reference": "30121",
+            "venue": {
+                "id": "854ca968-b25f-44f9-abc5-52bcf8825f15",
+                "name": "TD Garden",
+                "capacity": 17565,
+                "address": "100 Legends Way",
+                "city": "Boston",
+                "state": "MA",
+                "zip": "02114",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5940"
+            },
+            "home": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            },
+            "away": {
+                "id": "441730a9-0f24-11e2-8525-18a905767e44",
+                "name": "Toronto Maple Leafs",
+                "alias": "TOR",
+                "seed": 4,
+                "sr_id": "sr:team:3693",
+                "reference": "10"
+            }
+        },
+        {
+            "id": "2b03a098-0762-416c-b4f5-7daf33f480f6",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-12T23:30:00+00:00",
+            "home_points": 3,
+            "away_points": 4,
+            "sr_id": "sr:match:14285559",
+            "reference": "30131",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "44167db4-0f24-11e2-8525-18a905767e44",
+                "name": "Columbus Blue Jackets",
+                "alias": "CBJ",
+                "seed": 7,
+                "sr_id": "sr:team:3683",
+                "reference": "29"
+            }
+        },
+        {
+            "id": "c124c8f2-5ce9-429c-8ddc-1c9e9e9bbe27",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-13T01:30:00+00:00",
+            "home_points": 5,
+            "away_points": 2,
+            "sr_id": "sr:match:14285527",
+            "reference": "30151",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "4415ce44-0f24-11e2-8525-18a905767e44",
+                "name": "Colorado Avalanche",
+                "alias": "COL",
+                "seed": 8,
+                "sr_id": "sr:team:3682",
+                "reference": "21"
+            }
+        },
+        {
+            "id": "e4ce22ad-770b-4b3c-8926-cae91182d82f",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-13T02:30:00+00:00",
+            "home_points": 0,
+            "away_points": 3,
+            "sr_id": "sr:match:14285543",
+            "reference": "30181",
+            "venue": {
+                "id": "eb3866a7-4163-4517-bd42-d24e8c2522fe",
+                "name": "Honda Center",
+                "capacity": 17174,
+                "address": "2695 E. Katella Ave.",
+                "city": "Anaheim",
+                "state": "CA",
+                "zip": "92806",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:5934"
+            },
+            "home": {
+                "id": "441862de-0f24-11e2-8525-18a905767e44",
+                "name": "Anaheim Ducks",
+                "alias": "ANA",
+                "seed": 5,
+                "sr_id": "sr:team:3675",
+                "reference": "24"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "4a27971b-ad2e-47a2-8205-60373921e281",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-13T23:00:00+00:00",
+            "home_points": 1,
+            "away_points": 5,
+            "sr_id": "sr:match:14285569",
+            "reference": "30142",
+            "venue": {
+                "id": "09cab1a6-16ee-4ed9-aefa-c6cc24681b3b",
+                "name": "PPG Paints Arena",
+                "capacity": 18387,
+                "address": "1001 Fifth Ave.",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15219",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6052"
+            },
+            "home": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            },
+            "away": {
+                "id": "44179d47-0f24-11e2-8525-18a905767e44",
+                "name": "Philadelphia Flyers",
+                "alias": "PHI",
+                "seed": 6,
+                "sr_id": "sr:team:3699",
+                "reference": "4"
+            }
+        },
+        {
+            "id": "f156ffc1-5819-45dd-bae1-e1c31feb82fc",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-13T23:30:00+00:00",
+            "home_points": 4,
+            "away_points": 1,
+            "sr_id": "sr:match:14285541",
+            "reference": "30162",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "4416091c-0f24-11e2-8525-18a905767e44",
+                "name": "Minnesota Wild",
+                "alias": "MIN",
+                "seed": 4,
+                "sr_id": "sr:team:3689",
+                "reference": "30"
+            }
+        },
+        {
+            "id": "a75f10c9-d253-431f-92c4-bd1513e6202e",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-14T02:00:00+00:00",
+            "home_points": 2,
+            "away_points": 1,
+            "sr_id": "sr:match:14285553",
+            "reference": "30172",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44151f7a-0f24-11e2-8525-18a905767e44",
+                "name": "Los Angeles Kings",
+                "alias": "LA",
+                "seed": 7,
+                "sr_id": "sr:team:3688",
+                "reference": "26"
+            }
+        },
+        {
+            "id": "1bd55056-c4d2-4375-a908-798a97791ce7",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-14T19:00:00+00:00",
+            "home_points": 5,
+            "away_points": 3,
+            "sr_id": "sr:match:14286349",
+            "reference": "30112",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "44174b0c-0f24-11e2-8525-18a905767e44",
+                "name": "New Jersey Devils",
+                "alias": "NJ",
+                "seed": 8,
+                "sr_id": "sr:team:3704",
+                "reference": "1"
+            }
+        },
+        {
+            "id": "1e4430bc-b57f-49c4-884c-8b8dd11fd34a",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-14T19:00:00+00:00",
+            "home_points": 5,
+            "away_points": 4,
+            "sr_id": "sr:match:14285529",
+            "reference": "30152",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "4415ce44-0f24-11e2-8525-18a905767e44",
+                "name": "Colorado Avalanche",
+                "alias": "COL",
+                "seed": 8,
+                "sr_id": "sr:team:3682",
+                "reference": "21"
+            }
+        },
+        {
+            "id": "c608a28a-a07a-4384-8f22-6654fef283d5",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-15T00:00:00+00:00",
+            "home_points": 7,
+            "away_points": 3,
+            "sr_id": "sr:match:14286357",
+            "reference": "30122",
+            "venue": {
+                "id": "854ca968-b25f-44f9-abc5-52bcf8825f15",
+                "name": "TD Garden",
+                "capacity": 17565,
+                "address": "100 Legends Way",
+                "city": "Boston",
+                "state": "MA",
+                "zip": "02114",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5940"
+            },
+            "home": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            },
+            "away": {
+                "id": "441730a9-0f24-11e2-8525-18a905767e44",
+                "name": "Toronto Maple Leafs",
+                "alias": "TOR",
+                "seed": 4,
+                "sr_id": "sr:team:3693",
+                "reference": "10"
+            }
+        },
+        {
+            "id": "05229e84-4174-4625-8cc3-777d1348044b",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-15T02:30:00+00:00",
+            "home_points": 2,
+            "away_points": 3,
+            "sr_id": "sr:match:14285545",
+            "reference": "30182",
+            "venue": {
+                "id": "eb3866a7-4163-4517-bd42-d24e8c2522fe",
+                "name": "Honda Center",
+                "capacity": 17174,
+                "address": "2695 E. Katella Ave.",
+                "city": "Anaheim",
+                "state": "CA",
+                "zip": "92806",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:5934"
+            },
+            "home": {
+                "id": "441862de-0f24-11e2-8525-18a905767e44",
+                "name": "Anaheim Ducks",
+                "alias": "ANA",
+                "seed": 5,
+                "sr_id": "sr:team:3675",
+                "reference": "24"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "07ea7971-4d06-41ef-aad5-9425b17e9734",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-15T19:00:00+00:00",
+            "home_points": 1,
+            "away_points": 5,
+            "sr_id": "sr:match:14285571",
+            "reference": "30143",
+            "venue": {
+                "id": "0a162e5b-8d59-42d8-b173-a131bf632ffb",
+                "name": "Wells Fargo Center",
+                "capacity": 19543,
+                "address": "3601 S. Broad St.",
+                "city": "Philadelphia",
+                "state": "PA",
+                "zip": "19148",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6068"
+            },
+            "home": {
+                "id": "44179d47-0f24-11e2-8525-18a905767e44",
+                "name": "Philadelphia Flyers",
+                "alias": "PHI",
+                "seed": 6,
+                "sr_id": "sr:team:3699",
+                "reference": "4"
+            },
+            "away": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            }
+        },
+        {
+            "id": "8b506b42-6b7f-46f1-be3d-20195e2211fc",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-15T23:00:00+00:00",
+            "home_points": 6,
+            "away_points": 2,
+            "sr_id": "sr:match:14285537",
+            "reference": "30163",
+            "venue": {
+                "id": "7e6f808b-eff8-42fd-a8e2-d35219f565bd",
+                "name": "Xcel Energy Center",
+                "capacity": 18064,
+                "address": "199 W. Kellogg Blvd.",
+                "city": "St. Paul",
+                "state": "MN",
+                "zip": "55102",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:20171"
+            },
+            "home": {
+                "id": "4416091c-0f24-11e2-8525-18a905767e44",
+                "name": "Minnesota Wild",
+                "alias": "MIN",
+                "seed": 4,
+                "sr_id": "sr:team:3689",
+                "reference": "30"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "50dc2e50-b06e-45ff-a1cd-7234b38f5e71",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-15T23:30:00+00:00",
+            "home_points": 4,
+            "away_points": 5,
+            "sr_id": "sr:match:14285561",
+            "reference": "30132",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "44167db4-0f24-11e2-8525-18a905767e44",
+                "name": "Columbus Blue Jackets",
+                "alias": "CBJ",
+                "seed": 7,
+                "sr_id": "sr:team:3683",
+                "reference": "29"
+            }
+        },
+        {
+            "id": "a110979f-6c2a-4cf3-8641-e49e03ba4476",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-16T02:30:00+00:00",
+            "home_points": 2,
+            "away_points": 3,
+            "sr_id": "sr:match:14285555",
+            "reference": "30173",
+            "venue": {
+                "id": "dec253d4-68df-470b-b8fc-d663a7fa4704",
+                "name": "Staples Center",
+                "capacity": 18230,
+                "address": "1111 S. Figueroa St.",
+                "city": "Los Angeles",
+                "state": "CA",
+                "zip": "90015",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6008"
+            },
+            "home": {
+                "id": "44151f7a-0f24-11e2-8525-18a905767e44",
+                "name": "Los Angeles Kings",
+                "alias": "LA",
+                "seed": 7,
+                "sr_id": "sr:team:3688",
+                "reference": "26"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "af68521d-172c-4e58-ab41-01bc1ab460b5",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-16T23:00:00+00:00",
+            "home_points": 4,
+            "away_points": 2,
+            "sr_id": "sr:match:14286359",
+            "reference": "30123",
+            "venue": {
+                "id": "a84c7004-18b2-4c5d-a036-f0c368c08bc5",
+                "name": "Air Canada Centre",
+                "capacity": 18819,
+                "address": "40 Bay St.",
+                "city": "Toronto",
+                "state": "ON",
+                "zip": "M5J 2X2",
+                "country": "CAN",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6030"
+            },
+            "home": {
+                "id": "441730a9-0f24-11e2-8525-18a905767e44",
+                "name": "Toronto Maple Leafs",
+                "alias": "TOR",
+                "seed": 4,
+                "sr_id": "sr:team:3693",
+                "reference": "10"
+            },
+            "away": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            }
+        },
+        {
+            "id": "d5715a50-6683-4ca1-92b0-9183facd611f",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-16T23:30:00+00:00",
+            "home_points": 5,
+            "away_points": 2,
+            "sr_id": "sr:match:14286351",
+            "reference": "30113",
+            "venue": {
+                "id": "c970f791-c3bf-411e-89c6-952695afd414",
+                "name": "Prudential Center",
+                "capacity": 16514,
+                "address": "25 Lafayette St.",
+                "city": "Newark",
+                "state": "NJ",
+                "zip": "07102",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6048"
+            },
+            "home": {
+                "id": "44174b0c-0f24-11e2-8525-18a905767e44",
+                "name": "New Jersey Devils",
+                "alias": "NJ",
+                "seed": 8,
+                "sr_id": "sr:team:3704",
+                "reference": "1"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "adff6796-4850-4b22-8430-40e4f4e5f9ef",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-17T02:00:00+00:00",
+            "home_points": 5,
+            "away_points": 3,
+            "sr_id": "sr:match:14285531",
+            "reference": "30153",
+            "venue": {
+                "id": "a75eea49-c384-4edb-99f1-d5252773ec83",
+                "name": "Pepsi Center",
+                "capacity": 18007,
+                "address": "1000 Chopper Circle",
+                "city": "Denver",
+                "state": "CO",
+                "zip": "80204",
+                "country": "USA",
+                "time_zone": "US/Mountain",
+                "sr_id": "sr:venue:5976"
+            },
+            "home": {
+                "id": "4415ce44-0f24-11e2-8525-18a905767e44",
+                "name": "Colorado Avalanche",
+                "alias": "COL",
+                "seed": 8,
+                "sr_id": "sr:team:3682",
+                "reference": "21"
+            },
+            "away": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            }
+        },
+        {
+            "id": "61f89c81-50b2-4eb5-9fe0-46e04b69f423",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-17T02:30:00+00:00",
+            "home_points": 8,
+            "away_points": 1,
+            "sr_id": "sr:match:14285547",
+            "reference": "30183",
+            "venue": {
+                "id": "1da65282-af4c-4b81-a9de-344b76bb20b0",
+                "name": "SAP Center at San Jose",
+                "capacity": 17562,
+                "address": "525 W. Santa Clara St.",
+                "city": "San Jose",
+                "state": "CA",
+                "zip": "95113",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6046"
+            },
+            "home": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            },
+            "away": {
+                "id": "441862de-0f24-11e2-8525-18a905767e44",
+                "name": "Anaheim Ducks",
+                "alias": "ANA",
+                "seed": 5,
+                "sr_id": "sr:team:3675",
+                "reference": "24"
+            }
+        },
+        {
+            "id": "890c2230-9de6-49ce-996c-db852319d415",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-17T23:30:00+00:00",
+            "home_points": 2,
+            "away_points": 3,
+            "sr_id": "sr:match:14285563",
+            "reference": "30133",
+            "venue": {
+                "id": "41a57fc9-a04b-43db-b1f8-87f34f21459b",
+                "name": "Nationwide Arena",
+                "capacity": 18500,
+                "address": "200 W. Nationwide Blvd.",
+                "city": "Columbus",
+                "state": "OH",
+                "zip": "43215",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5982"
+            },
+            "home": {
+                "id": "44167db4-0f24-11e2-8525-18a905767e44",
+                "name": "Columbus Blue Jackets",
+                "alias": "CBJ",
+                "seed": 7,
+                "sr_id": "sr:team:3683",
+                "reference": "29"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "b8ba7ea4-11c8-4b2b-a396-6252f03ed54b",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-18T00:00:00+00:00",
+            "home_points": 0,
+            "away_points": 2,
+            "sr_id": "sr:match:14285535",
+            "reference": "30164",
+            "venue": {
+                "id": "7e6f808b-eff8-42fd-a8e2-d35219f565bd",
+                "name": "Xcel Energy Center",
+                "capacity": 18064,
+                "address": "199 W. Kellogg Blvd.",
+                "city": "St. Paul",
+                "state": "MN",
+                "zip": "55102",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:20171"
+            },
+            "home": {
+                "id": "4416091c-0f24-11e2-8525-18a905767e44",
+                "name": "Minnesota Wild",
+                "alias": "MIN",
+                "seed": 4,
+                "sr_id": "sr:team:3689",
+                "reference": "30"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "9a0d2f3f-a17e-4af1-a73e-6fb940baf54f",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-18T02:30:00+00:00",
+            "home_points": 0,
+            "away_points": 1,
+            "sr_id": "sr:match:14285557",
+            "reference": "30174",
+            "venue": {
+                "id": "dec253d4-68df-470b-b8fc-d663a7fa4704",
+                "name": "Staples Center",
+                "capacity": 18230,
+                "address": "1111 S. Figueroa St.",
+                "city": "Los Angeles",
+                "state": "CA",
+                "zip": "90015",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6008"
+            },
+            "home": {
+                "id": "44151f7a-0f24-11e2-8525-18a905767e44",
+                "name": "Los Angeles Kings",
+                "alias": "LA",
+                "seed": 7,
+                "sr_id": "sr:team:3688",
+                "reference": "26"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "533fe9ca-4d95-494e-bac9-ece275c74ff5",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-18T23:00:00+00:00",
+            "home_points": 0,
+            "away_points": 5,
+            "sr_id": "sr:match:14285573",
+            "reference": "30144",
+            "venue": {
+                "id": "0a162e5b-8d59-42d8-b173-a131bf632ffb",
+                "name": "Wells Fargo Center",
+                "capacity": 19543,
+                "address": "3601 S. Broad St.",
+                "city": "Philadelphia",
+                "state": "PA",
+                "zip": "19148",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6068"
+            },
+            "home": {
+                "id": "44179d47-0f24-11e2-8525-18a905767e44",
+                "name": "Philadelphia Flyers",
+                "alias": "PHI",
+                "seed": 6,
+                "sr_id": "sr:team:3699",
+                "reference": "4"
+            },
+            "away": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            }
+        },
+        {
+            "id": "4a557b58-180b-4f26-ac44-5f06ca5cdc38",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-18T23:30:00+00:00",
+            "home_points": 1,
+            "away_points": 3,
+            "sr_id": "sr:match:14286353",
+            "reference": "30114",
+            "venue": {
+                "id": "c970f791-c3bf-411e-89c6-952695afd414",
+                "name": "Prudential Center",
+                "capacity": 16514,
+                "address": "25 Lafayette St.",
+                "city": "Newark",
+                "state": "NJ",
+                "zip": "07102",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6048"
+            },
+            "home": {
+                "id": "44174b0c-0f24-11e2-8525-18a905767e44",
+                "name": "New Jersey Devils",
+                "alias": "NJ",
+                "seed": 8,
+                "sr_id": "sr:team:3704",
+                "reference": "1"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "3b05e9b9-93dc-4bc3-8c4b-28eb7e7e1667",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-19T02:00:00+00:00",
+            "home_points": 2,
+            "away_points": 3,
+            "sr_id": "sr:match:14285533",
+            "reference": "30154",
+            "venue": {
+                "id": "a75eea49-c384-4edb-99f1-d5252773ec83",
+                "name": "Pepsi Center",
+                "capacity": 18007,
+                "address": "1000 Chopper Circle",
+                "city": "Denver",
+                "state": "CO",
+                "zip": "80204",
+                "country": "USA",
+                "time_zone": "US/Mountain",
+                "sr_id": "sr:venue:5976"
+            },
+            "home": {
+                "id": "4415ce44-0f24-11e2-8525-18a905767e44",
+                "name": "Colorado Avalanche",
+                "alias": "COL",
+                "seed": 8,
+                "sr_id": "sr:team:3682",
+                "reference": "21"
+            },
+            "away": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            }
+        },
+        {
+            "id": "05462eae-6c04-4978-ab6f-8695c79fb13d",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-19T02:30:00+00:00",
+            "home_points": 2,
+            "away_points": 1,
+            "sr_id": "sr:match:14285549",
+            "reference": "30184",
+            "venue": {
+                "id": "1da65282-af4c-4b81-a9de-344b76bb20b0",
+                "name": "SAP Center at San Jose",
+                "capacity": 17562,
+                "address": "525 W. Santa Clara St.",
+                "city": "San Jose",
+                "state": "CA",
+                "zip": "95113",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6046"
+            },
+            "home": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            },
+            "away": {
+                "id": "441862de-0f24-11e2-8525-18a905767e44",
+                "name": "Anaheim Ducks",
+                "alias": "ANA",
+                "seed": 5,
+                "sr_id": "sr:team:3675",
+                "reference": "24"
+            }
+        },
+        {
+            "id": "3378a9e4-0c4e-4be6-8388-c082c45c9197",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-19T23:00:00+00:00",
+            "home_points": 1,
+            "away_points": 3,
+            "sr_id": "sr:match:14286361",
+            "reference": "30124",
+            "venue": {
+                "id": "a84c7004-18b2-4c5d-a036-f0c368c08bc5",
+                "name": "Air Canada Centre",
+                "capacity": 18819,
+                "address": "40 Bay St.",
+                "city": "Toronto",
+                "state": "ON",
+                "zip": "M5J 2X2",
+                "country": "CAN",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6030"
+            },
+            "home": {
+                "id": "441730a9-0f24-11e2-8525-18a905767e44",
+                "name": "Toronto Maple Leafs",
+                "alias": "TOR",
+                "seed": 4,
+                "sr_id": "sr:team:3693",
+                "reference": "10"
+            },
+            "away": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            }
+        },
+        {
+            "id": "f208d6ec-ce8f-445f-8acb-332e7aa7e9b8",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-19T23:30:00+00:00",
+            "home_points": 1,
+            "away_points": 4,
+            "sr_id": "sr:match:14285565",
+            "reference": "30134",
+            "venue": {
+                "id": "41a57fc9-a04b-43db-b1f8-87f34f21459b",
+                "name": "Nationwide Arena",
+                "capacity": 18500,
+                "address": "200 W. Nationwide Blvd.",
+                "city": "Columbus",
+                "state": "OH",
+                "zip": "43215",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5982"
+            },
+            "home": {
+                "id": "44167db4-0f24-11e2-8525-18a905767e44",
+                "name": "Columbus Blue Jackets",
+                "alias": "CBJ",
+                "seed": 7,
+                "sr_id": "sr:team:3683",
+                "reference": "29"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "134c5c01-45c8-45b7-91c3-1342183a3f43",
+            "title": "Game 5 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-20T02:00:00+00:00",
+            "reference": "30175",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44151f7a-0f24-11e2-8525-18a905767e44",
+                "name": "Los Angeles Kings",
+                "alias": "LA",
+                "seed": 7,
+                "sr_id": "sr:team:3688",
+                "reference": "26"
+            }
+        },
+        {
+            "id": "16c19046-cc29-4ed4-8a9a-ae59b6980ff1",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-20T23:00:00+00:00",
+            "home_points": 2,
+            "away_points": 4,
+            "sr_id": "sr:match:14343547",
+            "reference": "30145",
+            "venue": {
+                "id": "09cab1a6-16ee-4ed9-aefa-c6cc24681b3b",
+                "name": "PPG Paints Arena",
+                "capacity": 18387,
+                "address": "1001 Fifth Ave.",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15219",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6052"
+            },
+            "home": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            },
+            "away": {
+                "id": "44179d47-0f24-11e2-8525-18a905767e44",
+                "name": "Philadelphia Flyers",
+                "alias": "PHI",
+                "seed": 6,
+                "sr_id": "sr:team:3699",
+                "reference": "4"
+            }
+        },
+        {
+            "id": "ab51200b-2600-4ab6-a476-9420815290d0",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-20T23:30:00+00:00",
+            "home_points": 5,
+            "away_points": 0,
+            "sr_id": "sr:match:14349629",
+            "reference": "30165",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "4416091c-0f24-11e2-8525-18a905767e44",
+                "name": "Minnesota Wild",
+                "alias": "MIN",
+                "seed": 4,
+                "sr_id": "sr:team:3689",
+                "reference": "30"
+            }
+        },
+        {
+            "id": "41ce6cc5-c4dd-49fa-90f7-bed8e3537fa4",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-21T01:30:00+00:00",
+            "home_points": 1,
+            "away_points": 2,
+            "sr_id": "sr:match:14364587",
+            "reference": "30155",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "4415ce44-0f24-11e2-8525-18a905767e44",
+                "name": "Colorado Avalanche",
+                "alias": "COL",
+                "seed": 8,
+                "sr_id": "sr:team:3682",
+                "reference": "21"
+            }
+        },
+        {
+            "id": "548a2c83-9d2f-48bf-a319-8b4811f64db2",
+            "title": "Game 5 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-21T02:30:00+00:00",
+            "reference": "30185",
+            "venue": {
+                "id": "eb3866a7-4163-4517-bd42-d24e8c2522fe",
+                "name": "Honda Center",
+                "capacity": 17174,
+                "address": "2695 E. Katella Ave.",
+                "city": "Anaheim",
+                "state": "CA",
+                "zip": "92806",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:5934"
+            },
+            "home": {
+                "id": "441862de-0f24-11e2-8525-18a905767e44",
+                "name": "Anaheim Ducks",
+                "alias": "ANA",
+                "seed": 5,
+                "sr_id": "sr:team:3675",
+                "reference": "24"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "05a4d960-7353-4346-a903-3c3f75e76d31",
+            "title": "Game 6 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-21T17:00:00+00:00",
+            "reference": "30176",
+            "venue": {
+                "id": "dec253d4-68df-470b-b8fc-d663a7fa4704",
+                "name": "Staples Center",
+                "capacity": 18230,
+                "address": "1111 S. Figueroa St.",
+                "city": "Los Angeles",
+                "state": "CA",
+                "zip": "90015",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6008"
+            },
+            "home": {
+                "id": "44151f7a-0f24-11e2-8525-18a905767e44",
+                "name": "Los Angeles Kings",
+                "alias": "LA",
+                "seed": 7,
+                "sr_id": "sr:team:3688",
+                "reference": "26"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "15f1c011-7ca3-47a6-88bd-aa6d1070746b",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-21T19:00:00+00:00",
+            "home_points": 4,
+            "away_points": 3,
+            "sr_id": "sr:match:14372360",
+            "reference": "30135",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "44167db4-0f24-11e2-8525-18a905767e44",
+                "name": "Columbus Blue Jackets",
+                "alias": "CBJ",
+                "seed": 7,
+                "sr_id": "sr:team:3683",
+                "reference": "29"
+            }
+        },
+        {
+            "id": "5006158d-611f-469a-9bd8-34d647f960ad",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-21T19:00:00+00:00",
+            "home_points": 3,
+            "away_points": 1,
+            "sr_id": "sr:match:14364139",
+            "reference": "30115",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "44174b0c-0f24-11e2-8525-18a905767e44",
+                "name": "New Jersey Devils",
+                "alias": "NJ",
+                "seed": 8,
+                "sr_id": "sr:team:3704",
+                "reference": "1"
+            }
+        },
+        {
+            "id": "c59188fd-6d8e-48ca-8b92-fa4aef9a61f1",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-22T00:00:00+00:00",
+            "home_points": 3,
+            "away_points": 4,
+            "sr_id": "sr:match:14364137",
+            "reference": "30125",
+            "venue": {
+                "id": "854ca968-b25f-44f9-abc5-52bcf8825f15",
+                "name": "TD Garden",
+                "capacity": 17565,
+                "address": "100 Legends Way",
+                "city": "Boston",
+                "state": "MA",
+                "zip": "02114",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5940"
+            },
+            "home": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            },
+            "away": {
+                "id": "441730a9-0f24-11e2-8525-18a905767e44",
+                "name": "Toronto Maple Leafs",
+                "alias": "TOR",
+                "seed": 4,
+                "sr_id": "sr:team:3693",
+                "reference": "10"
+            }
+        },
+        {
+            "id": "838fd261-7a4a-4e7e-a23a-7c91adb4dfd2",
+            "title": "Game 6 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-22T17:00:00+00:00",
+            "reference": "30166",
+            "venue": {
+                "id": "7e6f808b-eff8-42fd-a8e2-d35219f565bd",
+                "name": "Xcel Energy Center",
+                "capacity": 18064,
+                "address": "199 W. Kellogg Blvd.",
+                "city": "St. Paul",
+                "state": "MN",
+                "zip": "55102",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:20171"
+            },
+            "home": {
+                "id": "4416091c-0f24-11e2-8525-18a905767e44",
+                "name": "Minnesota Wild",
+                "alias": "MIN",
+                "seed": 4,
+                "sr_id": "sr:team:3689",
+                "reference": "30"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "d7b8fc23-425f-4702-a350-58598e02b2d8",
+            "title": "Game 6 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-22T17:00:00+00:00",
+            "reference": "30186",
+            "venue": {
+                "id": "1da65282-af4c-4b81-a9de-344b76bb20b0",
+                "name": "SAP Center at San Jose",
+                "capacity": 17562,
+                "address": "525 W. Santa Clara St.",
+                "city": "San Jose",
+                "state": "CA",
+                "zip": "95113",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6046"
+            },
+            "home": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            },
+            "away": {
+                "id": "441862de-0f24-11e2-8525-18a905767e44",
+                "name": "Anaheim Ducks",
+                "alias": "ANA",
+                "seed": 5,
+                "sr_id": "sr:team:3675",
+                "reference": "24"
+            }
+        },
+        {
+            "id": "fb1717f5-3773-45ac-b209-9f5ab57b0625",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-22T19:00:00+00:00",
+            "home_points": 5,
+            "away_points": 8,
+            "sr_id": "sr:match:14397632",
+            "reference": "30146",
+            "venue": {
+                "id": "0a162e5b-8d59-42d8-b173-a131bf632ffb",
+                "name": "Wells Fargo Center",
+                "capacity": 19543,
+                "address": "3601 S. Broad St.",
+                "city": "Philadelphia",
+                "state": "PA",
+                "zip": "19148",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6068"
+            },
+            "home": {
+                "id": "44179d47-0f24-11e2-8525-18a905767e44",
+                "name": "Philadelphia Flyers",
+                "alias": "PHI",
+                "seed": 6,
+                "sr_id": "sr:team:3699",
+                "reference": "4"
+            },
+            "away": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            }
+        },
+        {
+            "id": "fa00ef18-2099-4e42-8405-9a81f68445d7",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-22T23:00:00+00:00",
+            "home_points": 0,
+            "away_points": 5,
+            "sr_id": "sr:match:14397780",
+            "reference": "30156",
+            "venue": {
+                "id": "a75eea49-c384-4edb-99f1-d5252773ec83",
+                "name": "Pepsi Center",
+                "capacity": 18007,
+                "address": "1000 Chopper Circle",
+                "city": "Denver",
+                "state": "CO",
+                "zip": "80204",
+                "country": "USA",
+                "time_zone": "US/Mountain",
+                "sr_id": "sr:venue:5976"
+            },
+            "home": {
+                "id": "4415ce44-0f24-11e2-8525-18a905767e44",
+                "name": "Colorado Avalanche",
+                "alias": "COL",
+                "seed": 8,
+                "sr_id": "sr:team:3682",
+                "reference": "21"
+            },
+            "away": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            }
+        },
+        {
+            "id": "9e25e4d3-66a3-4f52-9aee-f269cad33408",
+            "title": "Game 6 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-23T17:00:00+00:00",
+            "reference": "30116",
+            "venue": {
+                "id": "c970f791-c3bf-411e-89c6-952695afd414",
+                "name": "Prudential Center",
+                "capacity": 16514,
+                "address": "25 Lafayette St.",
+                "city": "Newark",
+                "state": "NJ",
+                "zip": "07102",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6048"
+            },
+            "home": {
+                "id": "44174b0c-0f24-11e2-8525-18a905767e44",
+                "name": "New Jersey Devils",
+                "alias": "NJ",
+                "seed": 8,
+                "sr_id": "sr:team:3704",
+                "reference": "1"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "fe36512f-02db-4cb4-93e4-5d248ce47570",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-23T17:00:00+00:00",
+            "reference": "30177",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44151f7a-0f24-11e2-8525-18a905767e44",
+                "name": "Los Angeles Kings",
+                "alias": "LA",
+                "seed": 7,
+                "sr_id": "sr:team:3688",
+                "reference": "26"
+            }
+        },
+        {
+            "id": "bd7ae8f4-37f3-4667-8b80-e54f74514835",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-23T23:00:00+00:00",
+            "home_points": 3,
+            "away_points": 1,
+            "sr_id": "sr:match:14401774",
+            "reference": "30126",
+            "venue": {
+                "id": "a84c7004-18b2-4c5d-a036-f0c368c08bc5",
+                "name": "Air Canada Centre",
+                "capacity": 18819,
+                "address": "40 Bay St.",
+                "city": "Toronto",
+                "state": "ON",
+                "zip": "M5J 2X2",
+                "country": "CAN",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6030"
+            },
+            "home": {
+                "id": "441730a9-0f24-11e2-8525-18a905767e44",
+                "name": "Toronto Maple Leafs",
+                "alias": "TOR",
+                "seed": 4,
+                "sr_id": "sr:team:3693",
+                "reference": "10"
+            },
+            "away": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            }
+        },
+        {
+            "id": "0ae918c1-bb11-435c-a275-c87edc1c7c07",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-23T23:30:00+00:00",
+            "home_points": 3,
+            "away_points": 6,
+            "sr_id": "sr:match:14388534",
+            "reference": "30136",
+            "venue": {
+                "id": "41a57fc9-a04b-43db-b1f8-87f34f21459b",
+                "name": "Nationwide Arena",
+                "capacity": 18500,
+                "address": "200 W. Nationwide Blvd.",
+                "city": "Columbus",
+                "state": "OH",
+                "zip": "43215",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5982"
+            },
+            "home": {
+                "id": "44167db4-0f24-11e2-8525-18a905767e44",
+                "name": "Columbus Blue Jackets",
+                "alias": "CBJ",
+                "seed": 7,
+                "sr_id": "sr:team:3683",
+                "reference": "29"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "00b80acf-976d-4a54-8c19-f1a9cf975d1b",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-24T17:00:00+00:00",
+            "reference": "30157",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "4415ce44-0f24-11e2-8525-18a905767e44",
+                "name": "Colorado Avalanche",
+                "alias": "COL",
+                "seed": 8,
+                "sr_id": "sr:team:3682",
+                "reference": "21"
+            }
+        },
+        {
+            "id": "68b6f008-b59a-4331-a166-18389f02506d",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-24T17:00:00+00:00",
+            "reference": "30147",
+            "venue": {
+                "id": "09cab1a6-16ee-4ed9-aefa-c6cc24681b3b",
+                "name": "PPG Paints Arena",
+                "capacity": 18387,
+                "address": "1001 Fifth Ave.",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15219",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6052"
+            },
+            "home": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            },
+            "away": {
+                "id": "44179d47-0f24-11e2-8525-18a905767e44",
+                "name": "Philadelphia Flyers",
+                "alias": "PHI",
+                "seed": 6,
+                "sr_id": "sr:team:3699",
+                "reference": "4"
+            }
+        },
+        {
+            "id": "f0af6271-00d7-4841-8824-2cbc657b6b97",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-24T17:00:00+00:00",
+            "reference": "30187",
+            "venue": {
+                "id": "eb3866a7-4163-4517-bd42-d24e8c2522fe",
+                "name": "Honda Center",
+                "capacity": 17174,
+                "address": "2695 E. Katella Ave.",
+                "city": "Anaheim",
+                "state": "CA",
+                "zip": "92806",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:5934"
+            },
+            "home": {
+                "id": "441862de-0f24-11e2-8525-18a905767e44",
+                "name": "Anaheim Ducks",
+                "alias": "ANA",
+                "seed": 5,
+                "sr_id": "sr:team:3675",
+                "reference": "24"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "2903f527-d41d-4477-b9ed-cc3c677e3a78",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-25T17:00:00+00:00",
+            "reference": "30137",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "44167db4-0f24-11e2-8525-18a905767e44",
+                "name": "Columbus Blue Jackets",
+                "alias": "CBJ",
+                "seed": 7,
+                "sr_id": "sr:team:3683",
+                "reference": "29"
+            }
+        },
+        {
+            "id": "44643ca1-b277-4bb5-a75d-7e67c71ecc90",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-25T17:00:00+00:00",
+            "reference": "30167",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "4416091c-0f24-11e2-8525-18a905767e44",
+                "name": "Minnesota Wild",
+                "alias": "MIN",
+                "seed": 4,
+                "sr_id": "sr:team:3689",
+                "reference": "30"
+            }
+        },
+        {
+            "id": "c725a290-f60b-4dba-9a7a-dbdc98082c6d",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-04-25T17:00:00+00:00",
+            "reference": "30117",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "44174b0c-0f24-11e2-8525-18a905767e44",
+                "name": "New Jersey Devils",
+                "alias": "NJ",
+                "seed": 8,
+                "sr_id": "sr:team:3704",
+                "reference": "1"
+            }
+        },
+        {
+            "id": "0cba481c-38dc-49a1-be9c-a9f0a4eda71e",
+            "title": "Game 7",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-25T23:30:00+00:00",
+            "home_points": 7,
+            "away_points": 4,
+            "sr_id": "sr:match:14423358",
+            "reference": "30127",
+            "venue": {
+                "id": "854ca968-b25f-44f9-abc5-52bcf8825f15",
+                "name": "TD Garden",
+                "capacity": 17565,
+                "address": "100 Legends Way",
+                "city": "Boston",
+                "state": "MA",
+                "zip": "02114",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5940"
+            },
+            "home": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            },
+            "away": {
+                "id": "441730a9-0f24-11e2-8525-18a905767e44",
+                "name": "Toronto Maple Leafs",
+                "alias": "TOR",
+                "seed": 4,
+                "sr_id": "sr:team:3693",
+                "reference": "10"
+            }
+        },
+        {
+            "id": "f2b500ec-a924-49e4-8b10-b31a57c97199",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-26T23:00:00+00:00",
+            "home_points": 2,
+            "away_points": 3,
+            "sr_id": "sr:match:14426758",
+            "reference": "30221",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            }
+        },
+        {
+            "id": "4230a981-d7d1-4e00-8e9c-e5ae6d75a63f",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-27T02:00:00+00:00",
+            "home_points": 7,
+            "away_points": 0,
+            "sr_id": "sr:match:14422824",
+            "reference": "30241",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "283c06a6-2aa5-455a-a5b9-cf5b1d7803b1",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-28T00:00:00+00:00",
+            "home_points": 1,
+            "away_points": 4,
+            "sr_id": "sr:match:14422822",
+            "reference": "30231",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "8fa9db16-7e26-4f9a-860e-52570ccc3d10",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-28T19:00:00+00:00",
+            "home_points": 2,
+            "away_points": 6,
+            "sr_id": "sr:match:14436382",
+            "reference": "30211",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            }
+        },
+        {
+            "id": "35a6e0c0-e54e-405f-b2fa-3f008bbf10e5",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-29T00:00:00+00:00",
+            "home_points": 3,
+            "away_points": 4,
+            "sr_id": "sr:match:14436390",
+            "reference": "30242",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "f8dd4ff9-8dff-41d5-bf7e-6587cbd8f754",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-29T19:00:00+00:00",
+            "home_points": 4,
+            "away_points": 1,
+            "sr_id": "sr:match:14436388",
+            "reference": "30222",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            }
+        },
+        {
+            "id": "cce5bd30-9222-465b-a3ad-3ad431732ea1",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-29T23:00:00+00:00",
+            "home_points": 5,
+            "away_points": 4,
+            "sr_id": "sr:match:14436392",
+            "reference": "30232",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "91f857fd-920c-4bfe-913f-f6eac74a9ac2",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-04-30T23:00:00+00:00",
+            "home_points": 4,
+            "away_points": 2,
+            "sr_id": "sr:match:14436394",
+            "reference": "30212",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            }
+        },
+        {
+            "id": "3c272234-fdfa-4d4e-a09c-a03312021b50",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-01T02:00:00+00:00",
+            "home_points": 3,
+            "away_points": 4,
+            "sr_id": "sr:match:14436404",
+            "reference": "30243",
+            "venue": {
+                "id": "1da65282-af4c-4b81-a9de-344b76bb20b0",
+                "name": "SAP Center at San Jose",
+                "capacity": 17562,
+                "address": "525 W. Santa Clara St.",
+                "city": "San Jose",
+                "state": "CA",
+                "zip": "95113",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6046"
+            },
+            "home": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "be81aaab-0d7c-4f41-a4ae-96fa30137c04",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-01T23:30:00+00:00",
+            "home_points": 3,
+            "away_points": 4,
+            "sr_id": "sr:match:14436396",
+            "reference": "30223",
+            "venue": {
+                "id": "09cab1a6-16ee-4ed9-aefa-c6cc24681b3b",
+                "name": "PPG Paints Arena",
+                "capacity": 18387,
+                "address": "1001 Fifth Ave.",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15219",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6052"
+            },
+            "home": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "9014de66-c9e2-46f7-aa2d-f71dfb8c3dd5",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-02T00:00:00+00:00",
+            "home_points": 7,
+            "away_points": 4,
+            "sr_id": "sr:match:14436402",
+            "reference": "30233",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            }
+        },
+        {
+            "id": "8ecd5f1b-eb32-4d58-ae1d-a7b51c6f0a65",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-02T23:00:00+00:00",
+            "home_points": 1,
+            "away_points": 4,
+            "sr_id": "sr:match:14436398",
+            "reference": "30213",
+            "venue": {
+                "id": "854ca968-b25f-44f9-abc5-52bcf8825f15",
+                "name": "TD Garden",
+                "capacity": 17565,
+                "address": "100 Legends Way",
+                "city": "Boston",
+                "state": "MA",
+                "zip": "02114",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5940"
+            },
+            "home": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "f06b93a3-e728-4fd8-8757-f82c0ea5e661",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-03T02:00:00+00:00",
+            "home_points": 4,
+            "away_points": 0,
+            "sr_id": "sr:match:14436406",
+            "reference": "30244",
+            "venue": {
+                "id": "1da65282-af4c-4b81-a9de-344b76bb20b0",
+                "name": "SAP Center at San Jose",
+                "capacity": 17562,
+                "address": "525 W. Santa Clara St.",
+                "city": "San Jose",
+                "state": "CA",
+                "zip": "95113",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6046"
+            },
+            "home": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "8c288ae7-26ef-4484-908c-7d0dca75d8c3",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-03T23:00:00+00:00",
+            "home_points": 3,
+            "away_points": 1,
+            "sr_id": "sr:match:14436410",
+            "reference": "30224",
+            "venue": {
+                "id": "09cab1a6-16ee-4ed9-aefa-c6cc24681b3b",
+                "name": "PPG Paints Arena",
+                "capacity": 18387,
+                "address": "1001 Fifth Ave.",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15219",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6052"
+            },
+            "home": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "459c0995-7db5-4785-8a81-fd709bda4cba",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-04T01:30:00+00:00",
+            "home_points": 1,
+            "away_points": 2,
+            "sr_id": "sr:match:14436408",
+            "reference": "30234",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            }
+        },
+        {
+            "id": "bc27fc15-306e-4a97-9728-859e4fc0c47b",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-04T23:00:00+00:00",
+            "home_points": 3,
+            "away_points": 4,
+            "sr_id": "sr:match:14436412",
+            "reference": "30214",
+            "venue": {
+                "id": "854ca968-b25f-44f9-abc5-52bcf8825f15",
+                "name": "TD Garden",
+                "capacity": 17565,
+                "address": "100 Legends Way",
+                "city": "Boston",
+                "state": "MA",
+                "zip": "02114",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5940"
+            },
+            "home": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "cb6e0457-8de5-4ab5-b37e-d9565682fd0b",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-05T02:00:00+00:00",
+            "home_points": 5,
+            "away_points": 3,
+            "sr_id": "sr:match:14453096",
+            "reference": "30245",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "93ffbb80-991a-4540-9443-b0fe1e6af594",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-05T23:00:00+00:00",
+            "home_points": 6,
+            "away_points": 3,
+            "sr_id": "sr:match:14457442",
+            "reference": "30225",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            }
+        },
+        {
+            "id": "5f715e67-65ec-4e2a-9c96-d8700f1e7a6f",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-06T01:30:00+00:00",
+            "home_points": 2,
+            "away_points": 6,
+            "sr_id": "sr:match:14457464",
+            "reference": "30235",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "e0294598-be71-4b69-b4d7-5b95f4a9922e",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-06T19:00:00+00:00",
+            "home_points": 3,
+            "away_points": 1,
+            "sr_id": "sr:match:14470760",
+            "reference": "30215",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            }
+        },
+        {
+            "id": "c6d18f7a-521f-4547-883e-c5840af86306",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-06T23:30:00+00:00",
+            "home_points": 0,
+            "away_points": 3,
+            "sr_id": "sr:match:14482594",
+            "reference": "30246",
+            "venue": {
+                "id": "1da65282-af4c-4b81-a9de-344b76bb20b0",
+                "name": "SAP Center at San Jose",
+                "capacity": 17562,
+                "address": "525 W. Santa Clara St.",
+                "city": "San Jose",
+                "state": "CA",
+                "zip": "95113",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:6046"
+            },
+            "home": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "d1caee6a-b46a-462d-9f81-a5e38e0bcef3",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-07T23:00:00+00:00",
+            "home_points": 1,
+            "away_points": 2,
+            "sr_id": "sr:match:14487404",
+            "reference": "30226",
+            "venue": {
+                "id": "09cab1a6-16ee-4ed9-aefa-c6cc24681b3b",
+                "name": "PPG Paints Arena",
+                "capacity": 18387,
+                "address": "1001 Fifth Ave.",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15219",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6052"
+            },
+            "home": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "038cf15c-1763-447e-b477-ef0efcfba0fc",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-08T01:30:00+00:00",
+            "home_points": 0,
+            "away_points": 4,
+            "sr_id": "sr:match:14487434",
+            "reference": "30236",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            }
+        },
+        {
+            "id": "7452b094-93d3-44ae-b89b-fdc5d28ea7b3",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-05-08T17:00:00+00:00",
+            "reference": "30247",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44155909-0f24-11e2-8525-18a905767e44",
+                "name": "San Jose Sharks",
+                "alias": "SJ",
+                "seed": 6,
+                "sr_id": "sr:team:3696",
+                "reference": "28"
+            }
+        },
+        {
+            "id": "d06643ba-ef9e-4015-98a1-75ddc912807e",
+            "title": "Game 6 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-05-08T17:00:00+00:00",
+            "reference": "30216",
+            "venue": {
+                "id": "854ca968-b25f-44f9-abc5-52bcf8825f15",
+                "name": "TD Garden",
+                "capacity": 17565,
+                "address": "100 Legends Way",
+                "city": "Boston",
+                "state": "MA",
+                "zip": "02114",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:5940"
+            },
+            "home": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "db7bdb0f-3386-441a-baf7-ecff309663ae",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-05-09T23:30:00+00:00",
+            "reference": "30227",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "4417b7d7-0f24-11e2-8525-18a905767e44",
+                "name": "Pittsburgh Penguins",
+                "alias": "PIT",
+                "seed": 5,
+                "sr_id": "sr:team:3697",
+                "reference": "5"
+            }
+        },
+        {
+            "id": "b17d5a19-cb27-4b7b-8f89-edf10880bfc0",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-05-10T17:00:00+00:00",
+            "reference": "30217",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4416ba1a-0f24-11e2-8525-18a905767e44",
+                "name": "Boston Bruins",
+                "alias": "BOS",
+                "seed": 2,
+                "sr_id": "sr:team:3677",
+                "reference": "6"
+            }
+        },
+        {
+            "id": "eac01d15-894e-4eda-adcf-db858b768449",
+            "title": "Game 7",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-11T00:00:00+00:00",
+            "home_points": 1,
+            "away_points": 5,
+            "sr_id": "sr:match:14514540",
+            "reference": "30237",
+            "venue": {
+                "id": "cc4e7a62-fae8-4ebb-9a64-f4384385d0b6",
+                "name": "Bridgestone Arena",
+                "capacity": 17113,
+                "address": "501 Broadway",
+                "city": "Nashville",
+                "state": "TN",
+                "zip": "37203",
+                "country": "USA",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6044"
+            },
+            "home": {
+                "id": "441643b7-0f24-11e2-8525-18a905767e44",
+                "name": "Nashville Predators",
+                "alias": "NSH",
+                "seed": 1,
+                "sr_id": "sr:team:3705",
+                "reference": "18"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "c7aed4bf-37cd-4bda-80eb-b7a0d1261b02",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-12T00:00:00+00:00",
+            "home_points": 2,
+            "away_points": 4,
+            "sr_id": "sr:match:14514544",
+            "reference": "30311",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "85409a1d-693a-47de-897c-8429527cdd2f",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-12T23:00:00+00:00",
+            "home_points": 4,
+            "away_points": 2,
+            "sr_id": "sr:match:14530476",
+            "reference": "30321",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "0cf30505-5617-4ea6-a723-00a155e314aa",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-14T00:00:00+00:00",
+            "home_points": 2,
+            "away_points": 6,
+            "sr_id": "sr:match:14520056",
+            "reference": "30312",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "a059c0c8-c7a7-4894-8f22-7920ed83d1fb",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-15T00:00:00+00:00",
+            "home_points": 1,
+            "away_points": 3,
+            "sr_id": "sr:match:14530478",
+            "reference": "30322",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "ef6d28b7-1080-4b18-8e29-10ef35288f32",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-16T00:00:00+00:00",
+            "home_points": 2,
+            "away_points": 4,
+            "sr_id": "sr:match:14520060",
+            "reference": "30313",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "a04cd6f0-2f34-4619-a836-54daf7409eed",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-17T01:00:00+00:00",
+            "home_points": 4,
+            "away_points": 2,
+            "sr_id": "sr:match:14530480",
+            "reference": "30323",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "c78f990b-66ca-42ad-9ba3-73b4da7016b2",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-18T00:00:00+00:00",
+            "home_points": 2,
+            "away_points": 4,
+            "sr_id": "sr:match:14520062",
+            "reference": "30314",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "652c2a4c-e363-47fd-b0b0-9514ca8a2ec5",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-19T00:00:00+00:00",
+            "home_points": 3,
+            "away_points": 2,
+            "sr_id": "sr:match:14530482",
+            "reference": "30324",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "01506e3c-a4cd-4460-ab06-77534dbb12d8",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-19T23:15:00+00:00",
+            "home_points": 3,
+            "away_points": 2,
+            "sr_id": "sr:match:14557226",
+            "reference": "30315",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "356fdc57-4c48-4d1e-8a7a-a66e497ad77a",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-20T19:00:00+00:00",
+            "home_points": 1,
+            "away_points": 2,
+            "sr_id": "sr:match:14551892",
+            "reference": "30325",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "9f1b768d-af88-46bf-bcaa-8df8b7f6a770",
+            "title": "Game 6",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-22T00:00:00+00:00",
+            "home_points": 3,
+            "away_points": 0,
+            "sr_id": "sr:match:14565204",
+            "reference": "30316",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            }
+        },
+        {
+            "id": "ce106b14-6ca7-4eaf-b293-08d634a121f8",
+            "title": "Game 6 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-05-23T01:00:00+00:00",
+            "reference": "30326",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            }
+        },
+        {
+            "id": "5aef5651-7ef9-4d2e-8d57-5b08acc27adc",
+            "title": "Game 7",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-24T00:00:00+00:00",
+            "home_points": 0,
+            "away_points": 4,
+            "sr_id": "sr:match:14586048",
+            "reference": "30317",
+            "venue": {
+                "id": "05aa49b2-f72d-4d42-ab30-f219d32ed97b",
+                "name": "Amalie Arena",
+                "capacity": 19092,
+                "address": "401 Channelside Drive",
+                "city": "Tampa",
+                "state": "FL",
+                "zip": "33602",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6036"
+            },
+            "home": {
+                "id": "4417d3cb-0f24-11e2-8525-18a905767e44",
+                "name": "Tampa Bay Lightning",
+                "alias": "TB",
+                "seed": 1,
+                "sr_id": "sr:team:3694",
+                "reference": "14"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "1fa5b7c3-ccd5-48ed-9fa5-1a5398faa613",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-05-25T00:00:00+00:00",
+            "reference": "30327",
+            "venue": {
+                "id": "900327b2-73d0-4e44-a138-fbf4fcbb058f",
+                "name": "Bell MTS Place",
+                "capacity": 15294,
+                "address": "300 Portage Ave.",
+                "city": "Winnipeg",
+                "state": "MB",
+                "zip": "R3C 5S5",
+                "country": "CAN",
+                "time_zone": "US/Central",
+                "sr_id": "sr:venue:6012"
+            },
+            "home": {
+                "id": "44180e55-0f24-11e2-8525-18a905767e44",
+                "name": "Winnipeg Jets",
+                "alias": "WPG",
+                "seed": 2,
+                "sr_id": "sr:team:3676",
+                "reference": "52"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "962d638b-d415-46d6-a58c-66c30b161108",
+            "title": "Game 1",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-29T00:00:00+00:00",
+            "home_points": 6,
+            "away_points": 4,
+            "sr_id": "sr:match:14597880",
+            "reference": "30411",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "137a62cc-a271-4a4d-ae1c-2da83766d86f",
+            "title": "Game 2",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-05-31T00:00:00+00:00",
+            "home_points": 2,
+            "away_points": 3,
+            "sr_id": "sr:match:14597882",
+            "reference": "30412",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "b45cb1d1-5d79-4fad-bf7e-3cf1ddb43a08",
+            "title": "Game 3",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-06-03T00:00:00+00:00",
+            "home_points": 3,
+            "away_points": 1,
+            "sr_id": "sr:match:14597888",
+            "reference": "30413",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "bfd16311-82c9-4888-8804-a1faec676c73",
+            "title": "Game 4",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-06-05T00:00:00+00:00",
+            "home_points": 6,
+            "away_points": 2,
+            "sr_id": "sr:match:14597890",
+            "reference": "30414",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "159809d4-72bf-48fb-9f4e-5b5696e00464",
+            "title": "Game 5",
+            "status": "closed",
+            "coverage": "full",
+            "scheduled": "2018-06-08T00:00:00+00:00",
+            "home_points": 3,
+            "away_points": 4,
+            "sr_id": "sr:match:14638009",
+            "reference": "30415",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        },
+        {
+            "id": "eab99dcb-0c2f-4642-9642-975f661cbffc",
+            "title": "Game 6 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-06-11T00:00:00+00:00",
+            "reference": "30416",
+            "venue": {
+                "id": "48f092ed-ce49-4a08-97c6-def284ba6721",
+                "name": "Capital One Arena",
+                "capacity": 18277,
+                "address": "601 F St. N.W.",
+                "city": "Washington",
+                "state": "DC",
+                "zip": "20004",
+                "country": "USA",
+                "time_zone": "US/Eastern",
+                "sr_id": "sr:venue:6016"
+            },
+            "home": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            },
+            "away": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            }
+        },
+        {
+            "id": "89e25939-309e-477d-b641-3ee6a4dc3fe9",
+            "title": "Game 7 (if necessary)",
+            "status": "unnecessary",
+            "coverage": "full",
+            "scheduled": "2018-06-14T00:00:00+00:00",
+            "reference": "30417",
+            "venue": {
+                "id": "17d90f56-d6fc-4d73-9cc7-4991d6da72f4",
+                "name": "T-Mobile Arena",
+                "capacity": 17367,
+                "address": "3780 South Las Vegas Boulevard",
+                "city": "Paradise",
+                "state": "NV",
+                "zip": "89158",
+                "country": "USA",
+                "time_zone": "US/Pacific",
+                "sr_id": "sr:venue:66045"
+            },
+            "home": {
+                "id": "42376e1c-6da8-461e-9443-cfcf0a9fcc4d",
+                "name": "Vegas Golden Knights",
+                "alias": "VGK",
+                "seed": 3,
+                "sr_id": "sr:team:344158",
+                "reference": "54"
+            },
+            "away": {
+                "id": "4417eede-0f24-11e2-8525-18a905767e44",
+                "name": "Washington Capitals",
+                "alias": "WSH",
+                "seed": 3,
+                "sr_id": "sr:team:3691",
+                "reference": "15"
+            }
+        }
+    ]
+}
