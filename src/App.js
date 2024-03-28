@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, setState, useEffect } from "react";
 import * as d3 from "d3";
-import { Heatmap, InteractionData } from './Heatmap.tsx';
-import DataProcessing, { DataViz } from "./data.tsx";
+import { Heatmap, InteractionData } from './components/Heatmap.tsx';
+import { DataViz, DataProcessing } from "./data.tsx";
 import nhl from "./NHL.json"
-import Team from "./team.tsx";
+import Team from "./components/Team.tsx";
+import * as NHLLogos from "./components/Logos.tsx";
+import DisplayedGames from "./components/DisplayedGames.tsx";
 
 function App() {
   const homeScoreText = "Home Score ";
@@ -15,12 +16,16 @@ function App() {
 
   let defaultChecked = true;
   let defHomeAwaySplit = true;
+
   let teams_list = ["BOS", "BUF", "DET", "FLA", "MTL", "OTT", "TB", "TOR", "CAR", "CBJ", "NJ", "NYI", "NYR", "PHI", "PIT", "WSH", "ARI", "CHI", "COL", "DAL", "MIN", "NSH", "STL", "WPG", "ANA", "CGY", "EDM", "LA", "SJ", "SEA", "VAN", "VGK"]
   let months_list = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+  
   let months_readable = { "01": "JAN", "02": "FEB", "03": "MAR", "04": "APR", "05": "MAY", "06": "JUN", "07": "JUL", "08": "AUG", "09": "SEP", "10": "OCT", "11": "NOV", "12":  "DEC"};
   let weekdays_list   = ["0", "1", "2", "3", "4", "5", "6"]
+  
   let weekdays_readable = {"0": "SUN", "1": "MON", "2": "TUE", "3": "WED", "4": "THU", "5": "FRI", "6": "SAT"}
-  let years_list = ["2016", "2017", "2018", "2019", "2020", "2021", "2022"]
+  let years_list = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
+  
   let types_list = ["REG", "PST"];
   let types_readable = {"REG": "Regular Season", "PST": "Postseason"}
 
@@ -62,9 +67,7 @@ function App() {
   }, []) 
 
   function handleChange (e) {
-    // console.log("EVENT");
     // console.log(e);
-
     let newChecks = {...checks}
 
     if (e != null && teams_list.indexOf(e.target.defaultValue) != -1) {
@@ -83,7 +86,7 @@ function App() {
 
     setChecks(newChecks);
     eligibleGames = DataProcessing(nhl, newChecks)
-    setDisplayGames([...eligibleGames][0].slice(0, 50))
+    setDisplayGames([...eligibleGames[0]].slice(0, 50))
     let newprocessed = DataViz(eligibleGames[1])
     setData(newprocessed)
     setHmmax(getMax(newprocessed))
@@ -92,7 +95,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        NHL
+        <div>NHL <NHLLogos.NHL size={50}/></div>
         <span className="checkbox"><input 
               value="homeawaysplit" 
               type="checkbox" 
@@ -146,20 +149,17 @@ function App() {
           [0, 1, 2, 3].map((a) => <div className="division_row">{teams_list.slice(a*8, a*8 + 8).map((tm, i) => Team(teams_list, defaultChecked, handleChange, a*8 + i))}</div>)
         }
         
-        <Heatmap data={data} width={700} height={700} x_Label={checks["homeawaysplit"] ? homeScoreText: loserScoreText} y_Label={checks["homeawaysplit"] ? awayScoreText: winnerScoreText} max={hmmax}/>
+        <Heatmap 
+          data={data} 
+          width={700} 
+          height={700} 
+          x_Label={checks["homeawaysplit"] ? homeScoreText: loserScoreText} 
+          y_Label={checks["homeawaysplit"] ? awayScoreText: winnerScoreText} 
+          max={hmmax}
+          />
         <div>Number of Eligible Games: {data.reduce((n, coord) => n + coord["value"], 0)}</div>
         <div>Mode: {hmmax}</div>
-        <div>Games:
-          {
-            displayGames.map((game, key) => <div key={"game_" + key} className="game">
-              <div>{game.scheduled}</div>
-              
-              <div><span>{game.away.name} @ {game.home.name}</span></div>
-              <div><span>{game.away_points} - {game.home_points}</span></div>
-              </div> 
-            )
-          }
-        </div>
+        <DisplayedGames displayed_games={displayGames} />
       </header>
     </div>
   );

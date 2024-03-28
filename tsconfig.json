@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
     "downlevelIteration": true
   }
 }
