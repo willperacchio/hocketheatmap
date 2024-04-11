@@ -6,7 +6,7 @@ export default function FeaturedGame (game, key) {
     return (
         <div key={"game_" + key} className="featured_game">
             <span className="featured_game_logo_left">
-                <span>{GetLogo(game.away.alias, 75)}</span>
+                <span>{GetLogo(game.away.alias, 50)}</span>
                 <span className="featured_game_points_left">{game.away_points}</span>
             </span>
             <span className="featured_game_details">
@@ -24,7 +24,7 @@ export default function FeaturedGame (game, key) {
             </span>
             <span className="featured_game_logo_right">
                 <span className="featured_game_points_right">{game.home_points}</span>
-                <span className="">{GetLogo(game.home.alias, 75)}</span>
+                <span className="">{GetLogo(game.home.alias, 50)}</span>
             </span>
         </div>
     )

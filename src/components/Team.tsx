@@ -1,7 +1,7 @@
 import { GetLogo } from "./../data.tsx";
 
 export default function Team (teams_list, defaultChecked, handleChange, i) {
-  console.log(teams_list)
+  // console.log(teams_list)
   return (
     <span className="team" key={"team_" + i}>
       <div className="team_format">

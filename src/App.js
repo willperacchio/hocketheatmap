@@ -53,7 +53,7 @@ function App() {
 
   const [checks, setChecks] = useState(defChecks);
   let eligibleGames = DataProcessing(nhl, defChecks)
-  const [displayGames, setDisplayGames] = useState([...eligibleGames[0]].slice(0, 50));
+  const [displayGames, setDisplayGames] = useState(structuredClone([...eligibleGames[0]]));
   let processed = DataViz(eligibleGames[1]);
   const [data, setData] = useState(processed);
   const [hmmax, setHmmax] = useState(getMax(processed))
@@ -86,7 +86,7 @@ function App() {
 
     setChecks(newChecks);
     eligibleGames = DataProcessing(nhl, newChecks)
-    setDisplayGames([...eligibleGames[0]].slice(0, 50))
+    setDisplayGames(structuredClone([...eligibleGames[0]]))
     let newprocessed = DataViz(eligibleGames[1])
     setData(newprocessed)
     setHmmax(getMax(newprocessed))
