@@ -1,9 +1,9 @@
 import FeaturedGame from "./FeaturedGame";
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-import moment from 'moment-timezone';
-import { GetLogo } from "../data";
+import moment from 'moment-timezone/builds/moment-timezone-with-data-1970-2030.js';
+import { getCityForTimeZone, convertTimeZone } from "../data";
 import * as NHLLogos from "./Logos";
-
+import { formatInTimeZone, format } from "date-fns-tz";
 
 export default function DisplayedGames (displayed_games: Array<Object>) {
 
@@ -22,7 +22,9 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
   }
 
   function getRandomGames (games) {
-    let remaining = games.length > 10 ? 10 : games.length
+    if (games.length <= 10) { return games }
+    
+    let remaining = 10;
     let random_indices = []
     while (remaining >= 0) {
       let num = getRandomInt(0, games.length)
@@ -44,11 +46,13 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
   }
 
-
   const columns: GridColDef[] = [
-    { field: 'localDate', headerName: 'Date', valueGetter: (value, row) => moment.tz(row.scheduled, row["venue.time_zone"]).format('MM/DD/YYYY'), width: 150},
-    { field: 'venue.time_zone', headerName: 'Time Zone', width: 150 },
-    { field: 'localStartTime', headerName: 'Local Start Time', valueGetter: (value, row) => moment.tz(row.scheduled, row["venue.time_zone"]).format('h:mm A'), width: 150},
+    { field: 'localDate', headerName: 'Date', valueGetter: (value, row) => 
+        formatInTimeZone(row.scheduled, convertTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]), 'yyyy/MM/dd'), width: 150},
+    { field: 'venue.time_zone', headerName: 'Time Zone', valueGetter: (value, row) => 
+        "" + row["venue.time_zone"] + " (" + getCityForTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]) + ")", width: 150 },
+    { field: 'localStartTime', headerName: 'Local Start Time', valueGetter: (value, row) => 
+        formatInTimeZone(row.scheduled, convertTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]), 'h:mm a'), width: 150},
     { field: 'venue.name', headerName: 'Venue Name', width: 200 },
     { field: 'venue.city', headerName: 'Venue City', width: 150 },
     { field: 'venue.country', headerName: 'Venue Country', width: 100 },
@@ -69,7 +73,6 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
         <DataGrid sx={{ color: "black", minHeight: "500px", backgroundColor: "cornflowerblue", fontWeight: "400"}}
           density="compact" 
           initialState={{
-            
             pagination: {paginationModel: { pageSize: 25 }}
           }}
           rows={games_to_display.map((game, key) => flatten(game))} 

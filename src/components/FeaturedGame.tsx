@@ -1,12 +1,12 @@
 import * as NHLLogos from "./Logos";
-import { GetLogo } from "../data";
+import { GetLogo, convertTimeZone, getCityForTimeZone } from "../data";
 import moment from 'moment-timezone';
+import { formatInTimeZone, format } from "date-fns-tz";
+
 
 export default function FeaturedGame (game, key) {
-
-    if (game === null || game === undefined) {
-        return;
-    } else {
+    if (game) {
+        let tz = formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'MMMM yyyy, dd h:mma')
         return (
             <div key={"game_" + key} className="featured_game">
                 <span className="featured_game_logo_left">
@@ -23,7 +23,7 @@ export default function FeaturedGame (game, key) {
                             <span>{game.venue.name} - {game.venue.city}, {game.venue.country}</span>
                         </div>
                         <div className="featured_game_line_1">
-                            <span className="featured_game_time">{moment.tz(game.scheduled, game.venue.time_zone).format('MMMM Do YYYY, h:mm A z')}</span>
+                            <span className="featured_game_time">{tz}</span>
                         </div>
                 </span>
                 <span className="featured_game_logo_right">
@@ -33,6 +33,4 @@ export default function FeaturedGame (game, key) {
             </div>
         )
     }
-
-    
 }

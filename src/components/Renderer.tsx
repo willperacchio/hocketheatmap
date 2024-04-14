@@ -163,6 +163,7 @@ export const Renderer = ({
       <text
         x={width/2 - 50}
         y={boundsHeight + 50}
+        key={"BottomLabel"}
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize={30}
@@ -179,6 +180,7 @@ export const Renderer = ({
       <text
         x={0}
         y={height/2}
+        key={"SideLabel"}
         textAnchor="middle"
         dominantBaseline="middle"
         transform="rotate(-90, 0,  250) translate(-150, -240)"
@@ -190,12 +192,13 @@ export const Renderer = ({
     )
   });
 
-  // Bottom Label
+  // Top Label
   const heatmapLabel = [0].map((d, i) => {
     return (
       <text
         x={width/2 - 50}
         y={-30}
+        key={"TopLabel"}
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize={40}

@@ -2,36 +2,32 @@ import React from "react";
 import { HeatmapProps } from "./components/Heatmap";
 import * as NHLLogos from "./components/Logos";
 import moment from 'moment-timezone';
+import { formatInTimeZone, format } from "date-fns-tz";
 
 export function DataViz (og) {
   const nCol = 12;
   const nRow = 12;
 
-  let vals = {};
+  let values = {};
 
   for (let a = 0; a < nCol; a++) {
     for (let b = 0; b < nRow; b++) {
-      vals["" + a + ":" + b] = 0
+      values["" + a + ":" + b] = 0
     }
   }
 
   for (let g = 0; g < og.length; g++) {
-    // console.log("here")
     if (og[g] != null && og[g][0] != null && og[g][1] != null ) {
-      vals["" + og[g][0] + ":" + og[g][1]] += 1
-    } else {
-      // console.log(og[g])
+      values["" + og[g][0] + ":" + og[g][1]] += 1
     }
   }
-
-  // console.log(vals)
 
   type HeatmapData = { x: number; y: number; value: number }[];
   let data: HeatmapData = [];
 
   for (let x = 0; x < nCol; x++) {
     for (let y = 0; y < nRow; y++) {
-      data.push({x: x, y: y, value: vals["" + x + ":" + y]});
+      data.push({x: x, y: y, value: values["" + x + ":" + y]});
     }
   }
 
@@ -46,7 +42,7 @@ export function DataProcessing (data_og, checks) {
   let months = checks["months"];
   let weekdays = checks["weekdays"];
   let types = checks["types"];
-  let homeAway = checks["homeawaysplit"];
+  let homeAway = checks["home_away"];
   let timezone = checks["timezones"];
   let country = checks["countries"];
   let start_time = checks["start_times"];
@@ -66,13 +62,15 @@ export function DataProcessing (data_og, checks) {
           // console.log(szn)
           for (let q = 0; q < data_og[szn]["games"].length; q++) { // Check games
             let game = data_og[szn]["games"][q]
-            let date = moment.tz(game["scheduled"], game["venue"]["time_zone"]).format("YYYY/MM/DD")
+            let date = formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'yyyy/MM/dd')
             if (months[date.substring(5,7)]) { // Check Month
               // console.log(weekday)
               let weekday = new Date(date).getDay();
               if (weekdays[weekday]) { // Check Weekday
                 if (teams[game["home"]["alias"]] || teams[game["away"]["alias"]]) { // Check teams
-                  if (country[game["venue"]["country"]]) {
+                  if (country[game["venue"]["country"]] // Check country
+                    && timezone[game["venue"]["time_zone"]] // check timezone
+                    && start_time[formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'h:mm a')]) { // Check start time
                     if (game["status"] == "closed") {
                       games.push(game)
                       if (homeAway) {
@@ -201,5 +199,33 @@ export function GetLogo (key, size) {
       return <NHLLogos.VGK size={size} />
     default:
       return <NHLLogos.NHL size={size} />
+  }
+}
+
+export function convertTimeZone(timezone: string, country: string, state: string) {
+  if (country === "CZE" || country === "SWE" || country === "FIN") {
+    return timezone
+  }
+
+  return "America/" + getCityForTimeZone(timezone, country, state)
+}
+
+export function getCityForTimeZone (timezone: string, country: string, state: string) {
+  if (country === "CZE" || country === "SWE" || country === "FIN") {
+    return timezone.split("/")[1]
+  }
+  
+  if (state === "AZ") { // Phoenix doesn't follow DST
+    return "Phoenix"
+  }
+
+  if (timezone === "US/Eastern") {
+    return "New_York"
+  } else if (timezone === "US/Central") {
+    return "Chicago"
+  } else if (timezone === "US/Mountain") {
+    return "Denver"
+  } else if (timezone === "US/Pacific") {
+    return "Los_Angeles"
   }
 }

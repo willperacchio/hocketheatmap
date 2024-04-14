@@ -24,6 +24,7 @@
 
 .heatmap {
   display: flex;
+  flex-direction: column;
   width: 40%;
 }
 
@@ -50,47 +51,56 @@
   border-color: transparent black transparent transparent;
 }
 
-
-.division_row {
-  width: 100%;
-}
-
-.team {
-  width: 12%;
-  display: inline-block;
-}
-
-.year, 
-.month, 
-.weekday, 
-.type,
-.country {
+.filter {
   font-size: 1.5rem;
-  flex: 1;
-  justify-self:flex-start;
-  align-items: flex-start;
   color: white;
-  margin: 5px;
   padding: 10px;
   border-radius: 5px;
   background-color: lightseagreen;
+  flex-grow: 0;
+  display: inline-grid;
+  /* margin: 1%; */
 }
 
-.year_row,
-.month_row,
-.weekday_row,
-.type_row,
-.country_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
+.filter_row {
+  display: grid;
+  min-width: 100%;
+  gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+}
+
+.two_column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.five_column {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.six_column {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.seven_column {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.eight_column {
+  grid-template-columns: repeat(8, 1fr);
 }
 
 input[type="checkbox"] {
   width: 25px;
   height: 25px;
+}
+
+input[type="radio"] {
+  width: 25px;
+  height: 25px;
+}
+
+div.radio-filter {
+  text-align: left;
 }
 
 .filter-descriptor {
@@ -181,38 +191,6 @@ input[type="checkbox"] {
   align-items: center;
 }
 
-.team_format {
-  display: flex;
-}
-
-.team_checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  width: 15%;
-}
-
-.team_logoname {
-  display: flex;
-  margin-left: 5px;
-  justify-content: start;
-  align-items: left;
-  width: 85%;
-}
-
-.team_logo {
-  display: flex;
-  align-items: start;
-  align-content: center;
-  width: 50%;
-}
-
-.team_name {
-  display: flex;
-  align-content: center;
-  font-size: 1rem;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -231,11 +209,11 @@ input[type="checkbox"] {
 
 .head-row {
   width: 100%;
-  font-size: 6rem;
+  font-size: 4rem;
   margin-top: 150px;
   margin-left: 200px;
   margin-right: 200px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 
 @keyframes App-logo-spin {
