@@ -1,10 +1,11 @@
 import React from "react";
-import { HeatmapProps } from "./components/Heatmap.tsx";
-import * as NHLLogos from "./components/Logos.tsx";
+import { HeatmapProps } from "./components/Heatmap";
+import * as NHLLogos from "./components/Logos";
+import moment from 'moment-timezone';
 
 export function DataViz (og) {
-  const nCol = 11;
-  const nRow = 11;
+  const nCol = 12;
+  const nRow = 12;
 
   let vals = {};
 
@@ -45,12 +46,16 @@ export function DataProcessing (data_og, checks) {
   let months = checks["months"];
   let weekdays = checks["weekdays"];
   let types = checks["types"];
-  let homeAway = checks["homeawaysplit"]
+  let homeAway = checks["homeawaysplit"];
+  let timezone = checks["timezones"];
+  let country = checks["countries"];
+  let start_time = checks["start_times"];
 
   let games = [];
   let og = [];
   // console.log("processing")
   // console.log(teams, years, types)
+  let stats = { "total_away": 0, "total_home": 0, "mov": 0 }
 
   for (const [t, t_val] of Object.entries(types)) {
     if (t_val) { // Check season type
@@ -60,25 +65,29 @@ export function DataProcessing (data_og, checks) {
           // console.log(data_og)
           // console.log(szn)
           for (let q = 0; q < data_og[szn]["games"].length; q++) { // Check games
-            if (months[data_og[szn]["games"][q]["scheduled"].substring(5, 7)]) { // Check Month
-              let weekday = new Date(data_og[szn]["games"][q]["scheduled"]).getDay();
+            let game = data_og[szn]["games"][q]
+            let date = moment.tz(game["scheduled"], game["venue"]["time_zone"]).format("YYYY/MM/DD")
+            if (months[date.substring(5,7)]) { // Check Month
               // console.log(weekday)
+              let weekday = new Date(date).getDay();
               if (weekdays[weekday]) { // Check Weekday
-                if (teams[data_og[szn]["games"][q]["home"]["alias"]] || teams[data_og[szn]["games"][q]["away"]["alias"]]) { // Check teams
-                  if (data_og[szn]["games"][q]["status"] == "closed") {
-                    games.push(data_og[szn]["games"][q])
-                    if (homeAway) {
-                      og.push([data_og[szn]["games"][q]["home_points"], data_og[szn]["games"][q]["away_points"]])
-                    } else {
-                      if (data_og[szn]["games"][q]["home_points"] >= data_og[szn]["games"][q]["away_points"]) {
-                        // console.log(data_og[szn]["games"][q])
-                        og.push([data_og[szn]["games"][q]["away_points"], data_og[szn]["games"][q]["home_points"]])
+                if (teams[game["home"]["alias"]] || teams[game["away"]["alias"]]) { // Check teams
+                  if (country[game["venue"]["country"]]) {
+                    if (game["status"] == "closed") {
+                      games.push(game)
+                      if (homeAway) {
+                        og.push([game["home_points"], game["away_points"]])
                       } else {
-                        og.push([data_og[szn]["games"][q]["home_points"], data_og[szn]["games"][q]["away_points"]])
+                        if (game["home_points"] >= game["away_points"]) {
+                          // console.log(game)
+                          og.push([game["away_points"], game["home_points"]])
+                        } else {
+                          og.push([game["home_points"], game["away_points"]])
+                        }
                       }
+                    } else {
+                      // console.log(data_og[szn]["games"][q]["status"])
                     }
-                  } else {
-                    // console.log(data_og[szn]["games"][q]["status"])
                   }
                 }
               }
@@ -89,8 +98,37 @@ export function DataProcessing (data_og, checks) {
     }
   }
   
+  const sg = structuredClone(games)
+  stats["average_away"] = (sg.reduce((acc, game) => { return acc += game["away_points"] }, 0 ) / sg.length).toFixed(3)
+  stats["average_home"] = (sg.reduce((acc, game) => { return acc += game["home_points"] }, 0 ) / sg.length).toFixed(3)
+  stats["average_winner"] = (sg.reduce((acc, game) => { return acc += Math.max(game["away_points"], game["home_points"]) }, 0 ) / sg.length).toFixed(3)
+  stats["average_loser"] = (sg.reduce((acc, game) => { return acc += Math.min(game["away_points"], game["home_points"]) }, 0 ) / sg.length).toFixed(3)
+  
+  
+  stats["average_mov"] = (sg.reduce((acc, game) => { return acc += Math.abs(game["away_points"] - game["home_points"]) }, 0 ) / sg.length).toFixed(3)
 
-  return [games, og];
+
+  stats["home_points"] = sg.map((game, idx) => game["home_points"])
+  stats["away_points"] = sg.map((game, idx) => game["away_points"])
+  stats["winner_points"] = sg.map((game, idx) => Math.max(game["home_points"], game["away_points"]))
+  stats["loser_points"] = sg.map((game, idx) => Math.min(game["home_points"], game["away_points"]))
+
+  const standardDeviation = (arr, usePopulation = false) => {
+    const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
+    return Math.sqrt(
+      arr.reduce((acc, val) => acc.concat((val - mean) ** 2), []).reduce((acc, val) => acc + val, 0) /
+        (arr.length - (usePopulation ? 0 : 1))
+    );
+  };
+
+  stats["stdev_home"] = standardDeviation(sg.map((game) => game["home_points"]), true).toFixed(2)
+  stats["stdev_away"] = standardDeviation(sg.map((game) => game["away_points"]), true).toFixed(2)
+  stats["stdev_winner"] = standardDeviation(sg.map((game) => Math.max(game["home_points"], game["away_points"])), true).toFixed(2)
+  stats["stdev_loser"] = standardDeviation(sg.map((game) => Math.min(game["home_points"], game["away_points"])), true).toFixed(2)
+
+  stats["stdev_mov"] = standardDeviation(sg.map((game) => Math.abs(game["away_points"] - game["home_points"])), true).toFixed(2)
+
+  return [games, og, stats];
 }
 
 export function GetLogo (key, size) {

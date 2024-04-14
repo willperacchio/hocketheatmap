@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Renderer } from "./Renderer.tsx";
-import { Tooltip } from "./Tooltip.tsx";
+import { Renderer } from "./Renderer";
+import { Tooltip } from "./Tooltip";
 import React, { useMemo } from "react";
 import Legend from "d3-color-legend";
 import * as d3 from "d3";
@@ -18,6 +18,8 @@ export type HeatmapProps = {
 export type InteractionData = {
   xLabel: string;
   yLabel: string;
+  x: string;
+  y: string;
   xPos: number;
   yPos: number;
   value: number;

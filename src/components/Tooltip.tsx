@@ -1,4 +1,4 @@
-import { InteractionData } from "./Heatmap.tsx";
+import { InteractionData } from "./Heatmap";
 import React from "react"
 
 type TooltipProps = {
@@ -21,7 +21,7 @@ export const Tooltip = ({ interactionData, width, height }: TooltipProps) => {
         position: "absolute",
         top: 0,
         left: 0,
-        pointerEvents: "none",
+        pointerEvents: "none"
       }}
     >
       {/* The actual box with dark background */}
@@ -33,9 +33,9 @@ export const Tooltip = ({ interactionData, width, height }: TooltipProps) => {
           top: interactionData.yPos,
         }}
       >
-        <TooltipRow label={"x"} value={interactionData.xLabel} />
-        <TooltipRow label={"y"} value={interactionData.yLabel} />
-        <TooltipRow label={"value"} value={String(interactionData.value)} />
+        <TooltipRow label={interactionData.xLabel} value={interactionData.x} />
+        <TooltipRow label={interactionData.yLabel} value={interactionData.y} />
+        <TooltipRow label={"Frequency"} value={String(interactionData.value)} />
       </div>
     </div>
   );
@@ -48,8 +48,6 @@ type TooltipRowProps = {
 
 const TooltipRow = ({ label, value }: TooltipRowProps) => (
   <div>
-    <b>{label}</b>
-    <span>: </span>
-    <span>{value}</span>
+    <span><b>{label}: {value}</b></span>
   </div>
 );

@@ -1,8 +1,8 @@
-import FeaturedGame from "./FeaturedGame.tsx";
+import FeaturedGame from "./FeaturedGame";
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 import moment from 'moment-timezone';
-import { GetLogo } from "../data.tsx";
-import * as NHLLogos from "./Logos.tsx";
+import { GetLogo } from "../data";
+import * as NHLLogos from "./Logos";
 
 
 export default function DisplayedGames (displayed_games: Array<Object>) {
@@ -66,7 +66,7 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
           { getRandomGames(games_to_display).map((game, key) => FeaturedGame(game, key)) }
         </div>
         All Games Matching Criteria:
-        <DataGrid sx={{ color: "black", backgroundColor: "cornflowerblue"}}
+        <DataGrid sx={{ color: "black", minHeight: "500px", backgroundColor: "cornflowerblue", fontWeight: "400"}}
           density="compact" 
           initialState={{
             

@@ -4,7 +4,7 @@ import { InteractionData } from "./Heatmap";
 import Legend from "d3-color-legend";
 // import Label from "react-d3-library";
 
-const MARGIN = { top: 10, right: 50, bottom: 30, left: 50 };
+const MARGIN = { top: 50, right: 50, bottom: 60, left: 60 };
 
 type RendererProps = {
   width: number;
@@ -51,7 +51,7 @@ export const Renderer = ({
 
   var colorScale = d3.scaleSequentialSymlog([0, max], d3.interpolateGnBu)
 
-  const title  = data.map((d, i) => {
+  const dataLabels  = data.map((d, i) => {
     const x = xScale(d.x);
     const y = yScale(d.y);
 
@@ -98,8 +98,10 @@ export const Renderer = ({
         stroke={"white"}
         onMouseEnter={(e) => {
           setHoveredCell({
-            xLabel: x_Label + d.x,
-            yLabel: y_Label + d.y,
+            xLabel: x_Label,
+            x: d.x,
+            yLabel: y_Label,
+            y: d.y,
             xPos: x + xScale.bandwidth() + MARGIN.left,
             yPos: y + xScale.bandwidth() / 2 + MARGIN.top,
             value: Math.round(d.value * 100) / 100,
@@ -155,19 +157,71 @@ export const Renderer = ({
     );
   });
 
+  // Bottom Label
+  const bottomLabel = [0].map((d, i) => {
     return (
-    <svg width={width} height={height}>
-      <g
-        width={boundsWidth}
-        height={boundsHeight}
-        transform={`translate(${[MARGIN.left, MARGIN.top].join(",")})`}
+      <text
+        x={width/2 - 50}
+        y={boundsHeight + 50}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize={30}
+        fill={"white"}
       >
-        {allShapes}
-        {xLabels}
-        {yLabels}
-        {title}
-      </g>
-    </svg>
+        Goals Scored by {x_Label.split(" ")[0]}
+      </text>
+    )
+  });
+
+  // Side Label
+  const sideLabel = [0].map((d, i) => {
+    return (
+      <text
+        x={0}
+        y={height/2}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        transform="rotate(-90, 0,  250) translate(-150, -240)"
+        fontSize={30}
+        fill={"white"}
+      >
+        Goals Scored by {y_Label.split(" ")[0]}
+      </text>
+    )
+  });
+
+  // Bottom Label
+  const heatmapLabel = [0].map((d, i) => {
+    return (
+      <text
+        x={width/2 - 50}
+        y={-30}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize={40}
+        fill={"white"}
+      >
+        Heatmap of Score Frequency
+      </text>
+    )
+  });  
+
+    return (
+      <svg width={width} height={height}>
+        <g
+          width={boundsWidth}
+          height={boundsHeight}
+          transform={`translate(${[MARGIN.left, MARGIN.top].join(",")})`}
+        >
+          {allShapes}
+          {xLabels}
+          {yLabels}
+          {heatmapLabel}
+          {dataLabels}
+          {bottomLabel}
+          {sideLabel}
+        </g>
+      </svg>
   )
 
   

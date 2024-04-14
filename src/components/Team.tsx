@@ -1,4 +1,4 @@
-import { GetLogo } from "./../data.tsx";
+import { GetLogo } from "./../data";
 
 export default function Team (teams_list, defaultChecked, handleChange, i) {
   // console.log(teams_list)

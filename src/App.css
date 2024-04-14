@@ -13,13 +13,27 @@
   }
 }
 
+.filters {
+  width: 50%;
+  display: inline-block;
+}
+
+.double-histogram {
+  width: 75%;
+}
+
+.heatmap {
+  display: flex;
+  width: 40%;
+}
+
 
 .tooltip {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
   color: white;
-  font-size: 12px;
+  font-size: 20px;
   padding: 4px;
   margin-left: 15px;
   transform: translateY(-50%);
@@ -38,7 +52,7 @@
 
 
 .division_row {
-  width: 50%;
+  width: 100%;
 }
 
 .team {
@@ -46,21 +60,58 @@
   display: inline-block;
 }
 
-.year {
-  display: inline-block;
-  width: 10%;
-  font-size: .75rem;
+.year, 
+.month, 
+.weekday, 
+.type,
+.country {
+  font-size: 1.5rem;
+  flex: 1;
+  justify-self:flex-start;
+  align-items: flex-start;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightseagreen;
 }
 
-.year_row {
-  width: 75%;
+.year_row,
+.month_row,
+.weekday_row,
+.type_row,
+.country_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.checkbox {
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
+
+.filter-descriptor {
+  font-size: 2rem;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.spacer {
+  min-width: 50px;
+}
+
+.double_histogram {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .all_displayed_games {
-  width:80%;
+  width:100%;
   margin-bottom: 50px;
 }
 
@@ -166,15 +217,25 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.head-row {
+  width: 100%;
+  font-size: 6rem;
+  margin-top: 150px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 150px;
 }
 
 @keyframes App-logo-spin {
@@ -192,4 +253,11 @@
 
 .MuiDataGrid-row.Mui-even {
   background-color: white;
+}
+
+.MuiDataGrid-row.Mui-odd:hover, 
+.MuiDataGrid-row.Mui-even:hover,
+.MuiDataGrid-row.Mui-odd.Mui-selected,
+.MuiDataGrid-row.Mui-even.Mui-selected {
+  color: white;
 }
