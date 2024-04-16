@@ -1,7 +1,6 @@
 import './App.css';
-import React, { useState, setState, useEffect } from "react";
-import * as d3 from "d3";
-import { Heatmap, InteractionData } from './components/Heatmap';
+import React, { useState, useEffect } from "react";
+import { Heatmap } from './components/Heatmap';
 import { DoubleHistogram } from "./components/DoubleHistogram";
 import { DataViz, DataProcessing } from "./data";
 import nhl from "./NHL.json"
@@ -11,6 +10,9 @@ import DisplayedGames from "./components/DisplayedGames";
 import Filter from "./components/Filter"
 
 function App() {
+  const [width, setWidth] = useState(100);
+  const [height, setHeight] = useState(100);
+
   const homeScoreText = "Home Score";
   const awayScoreText = "Away Score";
   const loserScoreText = "Loser Score";
@@ -28,7 +30,7 @@ function App() {
   let weekdays_readable = {"0": "Sunday", "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Saturday"}
 
   let years_list = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
-  let years_readable = {"2016": "2016-2017", "2017": "2017-2018", "2018": "2018-2019", "2019": "2019-2020", "2020": "2020-2021", "2021": "2021-2022", "2022": "2022-2023", "2023": "2023-2024" }
+  let years_readable = {"2016": "2016-17", "2017": "2017-18", "2018": "2018-19", "2019": "2019-20", "2020": "2020-21", "2021": "2021-22", "2022": "2022-23", "2023": "2023-24" }
   
   let types_list = ["REG", "PST"];
   let types_readable = {"REG": "Regular Season", "PST": "Postseason"}
@@ -74,9 +76,9 @@ function App() {
 
   const [checks, setChecks] = useState(defChecks);
   let eligibleGames = DataProcessing(nhl, defChecks)
-  const [displayGames, setDisplayGames] = useState(structuredClone([...eligibleGames[0]]));
+  const [displayGames, setDisplayGames] = useState(eligibleGames[0]);
   let processed = DataViz(eligibleGames[1]);
-  const [stats, setStats] = useState(structuredClone(eligibleGames[2]));
+  const [stats, setStats] = useState(eligibleGames[2]);
   const [data, setData] = useState(processed);
   const [most_frequent, setMostFrequent] = useState(getMax(processed))
 
@@ -87,38 +89,36 @@ function App() {
     })
   }
 
-  useEffect(() => {
-    handleChange();
-  }, []) 
-
   function handleChange (e) {
     let newChecks = {...checks}
 
-    if (e != null && teams_list.indexOf(e.target.defaultValue) != -1) {
-      newChecks["teams"][e.target.value] = e.target.checked
-    } else if (e != null && years_list.indexOf(e.target.value) != -1) {
-      newChecks["years"][e.target.value] = e.target.checked
-    } else if (e != null && months_list.indexOf(e.target.defaultValue) != -1) {
-      newChecks["months"][e.target.value] = e.target.checked
-    } else if (e != null && weekdays_list.indexOf(e.target.defaultValue) != -1) {
-      newChecks["weekdays"][e.target.value] = e.target.checked
-    } else if (e != null && types_list.indexOf(e.target.defaultValue) != -1) {
-      newChecks["types"][e.target.value] = e.target.checked
-    } else if (e != null && countries_list.indexOf(e.target.defaultValue) != -1) {
-      newChecks["countries"][e.target.value] = e.target.checked
-    } else if (e != null && timezones_list.indexOf(e.target.defaultValue) != -1) {
-      newChecks["timezones"][e.target.value] = e.target.checked
-    } else if (e != null && start_times_list.indexOf(e.target.defaultValue) != -1) {
-      newChecks["start_times"][e.target.value] = e.target.checked
-    } else if (e != null && e.target.value == "home_away") {
-      newChecks["home_away"] = e.target.checked
-    } else if (e != null && e.target.value == "winner_loser") {
-      newChecks["home_away"] = !e.target.checked
+    if (e) {
+      if (teams_list.indexOf(e.target.defaultValue) !== -1) {
+        newChecks["teams"][e.target.value] = e.target.checked
+      } else if (years_list.indexOf(e.target.value) !== -1) {
+        newChecks["years"][e.target.value] = e.target.checked
+      } else if (months_list.indexOf(e.target.defaultValue) !== -1) {
+        newChecks["months"][e.target.value] = e.target.checked
+      } else if (weekdays_list.indexOf(e.target.defaultValue) !== -1) {
+        newChecks["weekdays"][e.target.value] = e.target.checked
+      } else if (types_list.indexOf(e.target.defaultValue) !== -1) {
+        newChecks["types"][e.target.value] = e.target.checked
+      } else if (countries_list.indexOf(e.target.defaultValue) !== -1) {
+        newChecks["countries"][e.target.value] = e.target.checked
+      } else if (timezones_list.indexOf(e.target.defaultValue) !== -1) {
+        newChecks["timezones"][e.target.value] = e.target.checked
+      } else if (start_times_list.indexOf(e.target.defaultValue) !== -1) {
+        newChecks["start_times"][e.target.value] = e.target.checked
+      } else if (e.target.value === "home_away") {
+        newChecks["home_away"] = e.target.checked
+      } else if (e.target.value === "winner_loser") {
+        newChecks["home_away"] = !e.target.checked
+      }
     }
 
     setChecks(newChecks);
     eligibleGames = DataProcessing(nhl, newChecks)
-    setDisplayGames(structuredClone([...eligibleGames[0]]))
+    setDisplayGames(eligibleGames[0])
     let newly_processed = DataViz(eligibleGames[1])
     setStats(eligibleGames[2])
     setData(newly_processed)
@@ -126,7 +126,7 @@ function App() {
   };
 
   const getMostFrequentOutcome = (home_away) => {
-    if (most_frequent["value"] == 0) {
+    if (most_frequent["value"] === 0) {
       return "N/A"
     }
 
@@ -137,46 +137,57 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((event) => {
+        // Depending on the layout, you may need to swap inlineSize with blockSize
+        // https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentBoxSize
+        setWidth(event[0].contentBoxSize[0].inlineSize);
+        setHeight(event[0].contentBoxSize[0].blockSize);
+    });
+
+    resizeObserver.observe(document.getElementById("right-side"));
+});
+
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="head-row">Heatmap and Summary Analysis of NHL Games <br/><NHLLogos.NHL size={200}/></div>
+      <div className="App-header">
+        <div className="head-row"><NHLLogos.NHL size={200}/><br/>NHL Interactive Heatmap</div>
         <span className="filters">    
-          <div className="filter-descriptor">Season:</div>
-          <Filter filters_list={years_list} filters_readable={years_readable} defaultChecked={defaultChecked} handleChange={handleChange} style={"year"} grid={"eight_column"} />
-          
-          <div className="filter-descriptor">Month:</div>
-          <Filter filters_list={months_list} filters_readable={months_readable} defaultChecked={defaultChecked} handleChange={handleChange} style={"month"} grid={"six_column"} />
-          
-          <div className="filter-descriptor">Day of the Week:</div>
-          <Filter filters_list={weekdays_list} filters_readable={weekdays_readable} defaultChecked={defaultChecked} handleChange={handleChange} style={"weekday"} grid={"seven_column"}/>
-          
-          <div className="filter-descriptor">Type of Contest:</div>
-          <Filter filters_list={types_list} filters_readable={types_readable} defaultChecked={defaultChecked} handleChange={handleChange} style={"type"} grid={"two_column"}/>
-
-          <div className="filter-descriptor">Played in:</div>
-          <Filter filters_list={countries_list} filters_readable={countries_readable} defaultChecked={defaultChecked} handleChange={handleChange} style={"country"} grid={"five_column"} />
-
-          <div className="filter-descriptor">Timezone:</div>
-          <Filter filters_list={timezones_list} filters_readable={timezones_readable} defaultChecked={defaultChecked} handleChange={handleChange} style={"timezone"} grid={"six_column"} />
-          
-          <div className="filter-descriptor">Local Start Time:</div>
-          <Filter filters_list={start_times_list} filters_readable={start_times_readable} defaultChecked={defaultChecked} handleChange={handleChange} style={"start_time"} grid={"seven_column"} />
-
-          <div className="filter-descriptor">Team:</div>
-          <TeamFilter filters_list={teams_list} defaultChecked={defaultChecked} style={"team"} handleChange={handleChange} grid={"eight_column"} />
-          
-        </span>
-        <span className="heatmap">
           <div className="radio-filter">
-            <div><input id="home_away" value="home_away" type="radio" checked={checks["home_away"]} onChange={handleChange}/><label for="home_away">Compare Home and Away</label></div>
-            <div><input id="winner_loser" value="winner_loser" type="radio" checked={!checks["home_away"]} onChange={handleChange}/><label for="winner_loser">Compare Winner and Loser</label></div>
+            <div><input id="home_away" value="home_away" type="radio" checked={checks["home_away"]} onChange={handleChange}/><label htmlFor="home_away">Compare Home and Away</label></div>
+            <div><input id="winner_loser" value="winner_loser" type="radio" checked={!checks["home_away"]} onChange={handleChange}/><label htmlFor="winner_loser">Compare Winner and Loser</label></div>
           </div>
 
+          <div className="filter-descriptor">Season:</div>
+          <Filter filters_list={years_list} filters_readable={years_readable} defaultChecked={defaultChecked} handleChange={handleChange} grid={"eight_column"} />
+          
+          <div className="filter-descriptor">Month:</div>
+          <Filter filters_list={months_list} filters_readable={months_readable} defaultChecked={defaultChecked} handleChange={handleChange} grid={"six_column"} />
+          
+          <div className="filter-descriptor">Day of the Week:</div>
+          <Filter filters_list={weekdays_list} filters_readable={weekdays_readable} defaultChecked={defaultChecked} handleChange={handleChange} grid={"seven_column"}/>
+          
+          <div className="filter-descriptor">Type of Contest:</div>
+          <Filter filters_list={types_list} filters_readable={types_readable} defaultChecked={defaultChecked} handleChange={handleChange} grid={"two_column"}/>
+
+          <div className="filter-descriptor">Played in:</div>
+          <Filter filters_list={countries_list} filters_readable={countries_readable} defaultChecked={defaultChecked} handleChange={handleChange} grid={"five_column"} />
+
+          <div className="filter-descriptor">Timezone:</div>
+          <Filter filters_list={timezones_list} filters_readable={timezones_readable} defaultChecked={defaultChecked} handleChange={handleChange} grid={"six_column"} />
+          
+          <div className="filter-descriptor">Local Start Time:</div>
+          <Filter filters_list={start_times_list} filters_readable={start_times_readable} defaultChecked={defaultChecked} handleChange={handleChange} grid={"seven_column"} />
+
+          <div className="filter-descriptor">Team:</div>
+          <TeamFilter size={width * .0625} filters_list={teams_list} defaultChecked={defaultChecked} teamStyle={"team"} handleChange={handleChange} grid={"eight_column"} />
+          
+        </span>
+        <span className="heatmap" id="right-side">
           <Heatmap 
             data={data} 
-            width={900} 
-            height={900} 
+            width={width * 0.9} 
+            height={width * 0.9} 
             x_Label={checks["home_away"] ? homeScoreText: loserScoreText} 
             y_Label={checks["home_away"] ? awayScoreText: winnerScoreText} 
             max={most_frequent["value"]}
@@ -184,25 +195,25 @@ function App() {
           <div>Number of Eligible Games: {data.reduce((n, coord) => n + coord["value"], 0)}</div>
           <div>Most Frequent Outcome: {getMostFrequentOutcome(checks["home_away"])}</div>
           <div>Average Margin of Victory: {stats["average_mov"]} ± {stats["stdev_mov"]}</div>
-        </span>
-        <span className="double-histogram">
-          <DoubleHistogram 
-            width={700} 
-            height={400} 
-            s1={checks["home_away"] ? [...stats["home_points"]]: [...stats["loser_points"]]}
-            s2={checks["home_away"] ? [...stats["away_points"]]: [...stats["winner_points"]]}
-            s1_Label={checks["home_away"] ? homeScoreText: loserScoreText} 
-            s2_Label={checks["home_away"] ? awayScoreText: winnerScoreText}
-            mean1={checks["home_away"] ? stats["average_home"] : stats["average_loser"]}
-            mean2={checks["home_away"] ? stats["average_away"] : stats["average_winner"]}
-            stdev1={checks["home_away"] ? stats["stdev_home"] : stats["stdev_loser"]}
-            stdev2={checks["home_away"] ? stats["stdev_away"] : stats["stdev_winner"]}
-            />
+          <span className="double-histogram">
+            <DoubleHistogram 
+              w={width*.5} 
+              h={width*.5} 
+              s1={checks["home_away"] ? [...stats["home_points"]]: [...stats["loser_points"]]}
+              s2={checks["home_away"] ? [...stats["away_points"]]: [...stats["winner_points"]]}
+              s1_Label={checks["home_away"] ? homeScoreText: loserScoreText} 
+              s2_Label={checks["home_away"] ? awayScoreText: winnerScoreText}
+              mean1={checks["home_away"] ? stats["average_home"] : stats["average_loser"]}
+              mean2={checks["home_away"] ? stats["average_away"] : stats["average_winner"]}
+              stdev1={checks["home_away"] ? stats["stdev_home"] : stats["stdev_loser"]}
+              stdev2={checks["home_away"] ? stats["stdev_away"] : stats["stdev_winner"]}
+              />
+          </span>
         </span>
         <span className="displayed-games">
           <DisplayedGames displayed_games={displayGames} />
         </span>
-      </header>
+      </div>
     </div>
   );
 }

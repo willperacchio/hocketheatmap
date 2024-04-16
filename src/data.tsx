@@ -1,8 +1,5 @@
-import React from "react";
-import { HeatmapProps } from "./components/Heatmap";
 import * as NHLLogos from "./components/Logos";
-import moment from 'moment-timezone';
-import { formatInTimeZone, format } from "date-fns-tz";
+import { formatInTimeZone } from "date-fns-tz";
 
 export function DataViz (og) {
   const nCol = 12;
@@ -58,20 +55,17 @@ export function DataProcessing (data_og, checks) {
       for (const [y, y_val] of Object.entries(years)) {
         if (y_val) { // Check year
           let szn =  y + "_" + t;
-          // console.log(data_og)
-          // console.log(szn)
           for (let q = 0; q < data_og[szn]["games"].length; q++) { // Check games
             let game = data_og[szn]["games"][q]
             let date = formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'yyyy/MM/dd')
             if (months[date.substring(5,7)]) { // Check Month
-              // console.log(weekday)
               let weekday = new Date(date).getDay();
               if (weekdays[weekday]) { // Check Weekday
                 if (teams[game["home"]["alias"]] || teams[game["away"]["alias"]]) { // Check teams
                   if (country[game["venue"]["country"]] // Check country
                     && timezone[game["venue"]["time_zone"]] // check timezone
                     && start_time[formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'h:mm a')]) { // Check start time
-                    if (game["status"] == "closed") {
+                    if (game["status"] === "closed") {
                       games.push(game)
                       if (homeAway) {
                         og.push([game["home_points"], game["away_points"]])
@@ -83,8 +77,6 @@ export function DataProcessing (data_og, checks) {
                           og.push([game["home_points"], game["away_points"]])
                         }
                       }
-                    } else {
-                      // console.log(data_og[szn]["games"][q]["status"])
                     }
                   }
                 }
@@ -96,20 +88,19 @@ export function DataProcessing (data_og, checks) {
     }
   }
   
-  const sg = structuredClone(games)
-  stats["average_away"] = (sg.reduce((acc, game) => { return acc += game["away_points"] }, 0 ) / sg.length).toFixed(3)
-  stats["average_home"] = (sg.reduce((acc, game) => { return acc += game["home_points"] }, 0 ) / sg.length).toFixed(3)
-  stats["average_winner"] = (sg.reduce((acc, game) => { return acc += Math.max(game["away_points"], game["home_points"]) }, 0 ) / sg.length).toFixed(3)
-  stats["average_loser"] = (sg.reduce((acc, game) => { return acc += Math.min(game["away_points"], game["home_points"]) }, 0 ) / sg.length).toFixed(3)
+  stats["average_away"] = (games.reduce((acc, game) => { return acc += game["away_points"] }, 0 ) / games.length).toFixed(3)
+  stats["average_home"] = (games.reduce((acc, game) => { return acc += game["home_points"] }, 0 ) / games.length).toFixed(3)
+  stats["average_winner"] = (games.reduce((acc, game) => { return acc += Math.max(game["away_points"], game["home_points"]) }, 0 ) / games.length).toFixed(3)
+  stats["average_loser"] = (games.reduce((acc, game) => { return acc += Math.min(game["away_points"], game["home_points"]) }, 0 ) / games.length).toFixed(3)
   
   
-  stats["average_mov"] = (sg.reduce((acc, game) => { return acc += Math.abs(game["away_points"] - game["home_points"]) }, 0 ) / sg.length).toFixed(3)
+  stats["average_mov"] = (games.reduce((acc, game) => { return acc += Math.abs(game["away_points"] - game["home_points"]) }, 0 ) / games.length).toFixed(3)
 
 
-  stats["home_points"] = sg.map((game, idx) => game["home_points"])
-  stats["away_points"] = sg.map((game, idx) => game["away_points"])
-  stats["winner_points"] = sg.map((game, idx) => Math.max(game["home_points"], game["away_points"]))
-  stats["loser_points"] = sg.map((game, idx) => Math.min(game["home_points"], game["away_points"]))
+  stats["home_points"] = games.map((game, idx) => game["home_points"])
+  stats["away_points"] = games.map((game, idx) => game["away_points"])
+  stats["winner_points"] = games.map((game, idx) => Math.max(game["home_points"], game["away_points"]))
+  stats["loser_points"] = games.map((game, idx) => Math.min(game["home_points"], game["away_points"]))
 
   const standardDeviation = (arr, usePopulation = false) => {
     const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
@@ -119,12 +110,12 @@ export function DataProcessing (data_og, checks) {
     );
   };
 
-  stats["stdev_home"] = standardDeviation(sg.map((game) => game["home_points"]), true).toFixed(2)
-  stats["stdev_away"] = standardDeviation(sg.map((game) => game["away_points"]), true).toFixed(2)
-  stats["stdev_winner"] = standardDeviation(sg.map((game) => Math.max(game["home_points"], game["away_points"])), true).toFixed(2)
-  stats["stdev_loser"] = standardDeviation(sg.map((game) => Math.min(game["home_points"], game["away_points"])), true).toFixed(2)
+  stats["stdev_home"] = standardDeviation(stats["home_points"], true).toFixed(2)
+  stats["stdev_away"] = standardDeviation(stats["away_points"], true).toFixed(2)
+  stats["stdev_winner"] = standardDeviation(stats["winner_points"], true).toFixed(2)
+  stats["stdev_loser"] = standardDeviation(stats["loser_points"], true).toFixed(2)
 
-  stats["stdev_mov"] = standardDeviation(sg.map((game) => Math.abs(game["away_points"] - game["home_points"])), true).toFixed(2)
+  stats["stdev_mov"] = standardDeviation(games.map((game) => Math.abs(game["away_points"] - game["home_points"])), true).toFixed(2)
 
   return [games, og, stats];
 }

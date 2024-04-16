@@ -1,12 +1,7 @@
-import React, { useMemo } from "react";
 import { useState } from "react";
-
 import * as d3 from "d3";
 import { HistogramInteractionData } from "./DoubleHistogram";
-import Legend from "d3-color-legend";
 import { HistogramTooltip } from "./HistogramTooltip";
-
-// import Label from "react-d3-library";
 
 const MARGIN = { top: 10, right: 50, bottom: 30, left: 50 };
 
@@ -44,8 +39,6 @@ export const HistogramRenderer = ({
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
-  const allXGroups = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
   // Append the svg object to the body of the page
   d3.select("#histogram_" + id).select("svg").remove()
   
@@ -61,11 +54,11 @@ export const HistogramRenderer = ({
   svg.append("rect").attr("width", width + margin.left + margin.right).attr("height", height).attr("opacity", "1").attr("fill", "white");
 
   // Bottom Axis
-  svg.append("g").attr("transform", `translate(0, ${height})`).call(d3.axisBottom(x)).style("font-size", "20px");
+  svg.append("g").attr("transform", `translate(0, ${height})`).call(d3.axisBottom(x)).style("font-size", "1.25rem").attr("pointer-events", "none");
 
   // Left Axis
   y.domain([0, maxFreq]);   // d3.hist has to be called before the Y axis obviously
-  svg.append("g").call(d3.axisLeft(y)).style("font-size", "15px")
+  svg.append("g").call(d3.axisLeft(y)).style("font-size", "1.25rem").attr("pointer-events", "none")
 
   svg.selectAll("rect")
     .data(bins)
@@ -97,24 +90,26 @@ export const HistogramRenderer = ({
     .on("mouseleave", () => setHoveredCell(null) )
   
   // Legend
-  svg.append("circle").attr("cx",.75*width - 15).attr("cy",30).attr("r", 6).style("fill", color)
-  svg.append("text").attr("x", .75*width).attr("y", 32).text(label).style("font-size", "20px").attr("alignment-baseline","middle")
+  svg.append("circle").attr("cx",.48*width + 5).attr("cy",30).attr("r", 6).style("fill", color).attr("pointer-events", "none")
+  svg.append("text").attr("x", .55*width).attr("y", 32).text(label).style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
 
-  svg.append("text").attr("x", .75*width  - 20).attr("y", 55).text("μ").style("font-size", "20px").attr("alignment-baseline","middle")
-  svg.append("text").attr("x", .75*width).attr("y", 55).text(`Mean: ${mean}`).style("font-size", "20px").attr("alignment-baseline","middle")
+  svg.append("text").attr("x", .48*width).attr("y", 55).text("μ").style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
+  svg.append("text").attr("x", .55*width).attr("y", 55).text(`Mean: ${mean}`).style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
 
-  svg.append("text").attr("x", .75*width  - 20).attr("y", 78).text("σ").style("font-size", "20px").attr("alignment-baseline","middle")
-  svg.append("text").attr("x", .75*width).attr("y", 78).text(`Stdev: ±${stdev}`).style("font-size", "20px").attr("alignment-baseline","middle")
+  svg.append("text").attr("x", .48*width).attr("y", 78).text("σ").style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
+  svg.append("text").attr("x", .55*width).attr("y", 78).text(`Stdev: ±${stdev}`).style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
 
   // Plot numbers above bars
   for (let i = 0; i <= 11; i++) {
     svg.append("text")
-      .attr("x", x(i) + 22)
+      .attr("x", x(i) + boundsWidth / 20)
       .attr("y", Math.min(y(bins[i + 1].length) - 20, height - 20))
       .text(bins[i + 1].length)
-      .style("font-size", "20px")
+      .style("font-size", "1rem")
+      .style("font-weight", "bold")
       .attr("alignment-baseline","middle")
       .attr("text-anchor", "middle")
+      .attr("pointer-events", "none")
   }
 
   // Bottom Label
@@ -122,21 +117,23 @@ export const HistogramRenderer = ({
     .attr("x", width/2)
     .attr("y", height + 50)
     .text("Number of Goals Scored")
-    .style("font-size", "30px")
+    .style("font-size", "1.5rem")
     .attr("alignment-baseline","middle")
     .attr("text-anchor", "middle")
     .attr("fill", "white")
+    .attr("pointer-events", "none")
 
   // Side Label
   svg.append("text")
     .attr("x", 0)
-    .attr("y", height/2)
+    .attr("y", 0)
     .text("Number of Games")
-    .attr("transform", `rotate(-90, ${0},  ${250}) translate(-10, -85)`)
-    .style("font-size", "30px")
+    .attr("transform", `rotate(-90, 0,  0) translate(${-height/2}, -75)`)
+    .style("font-size", "1.5rem")
     .attr("alignment-baseline","middle")
     .attr("text-anchor", "middle")
     .attr("fill", "white")
+    .attr("pointer-events", "none")
 
   return (
     <div style={{ position: "relative" }} id={"histogram_" + id}>

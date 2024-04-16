@@ -1,8 +1,6 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import * as d3 from "d3";
 import { InteractionData } from "./Heatmap";
-import Legend from "d3-color-legend";
-// import Label from "react-d3-library";
 
 const MARGIN = { top: 50, right: 50, bottom: 60, left: 60 };
 
@@ -12,26 +10,17 @@ type RendererProps = {
   x_Label: string;
   y_Label: string;
   data: { x: string; y: string; value: number }[];
+  max: number;
   setHoveredCell: (hoveredCell: InteractionData | null) => void;
 };
 
-export const Renderer = ({
-  width,
-  height,
-  x_Label,
-  y_Label,
-  data,
-  setHoveredCell,
-}: RendererProps) => {
-  // The bounds (=area inside the axis) is calculated by substracting the margins
+export const Renderer = ({width, height, x_Label, y_Label, data, max, setHoveredCell}: RendererProps) => {
+  // The bounds (=area inside the axis) is calculated by subtracting the margins
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
   const allYGroups = useMemo(() => [...new Set(data.map((d) => d.y))], [data]);
   const allXGroups = useMemo(() => [...new Set(data.map((d) => d.x))], [data]);
-
-  const min = 0;
-  const max = data.reduce((max, coord) => Math.max(max, coord["value"]), 0)
 
   const xScale = useMemo(() => {
     return d3
@@ -66,8 +55,10 @@ export const Renderer = ({
             y={yScale(d.y) + yScale.bandwidth()/2 + + yScale.bandwidth()/20}
             textAnchor="middle"
             dominantBaseline="middle"
-            fontSize={20}
+            fontSize={"1.5rem"}
+            fontWeight={"bold"}
             fill={"black"}
+            pointerEvents={"none"}
         >
             {d.value}
         </text>
@@ -127,8 +118,9 @@ export const Renderer = ({
         y={boundsHeight + 15}
         textAnchor="middle"
         dominantBaseline="middle"
-        fontSize={20}
+        fontSize={"1.5rem"}
         fill={"white"}
+        pointerEvents={"none"}
       >
         {name}
       </text>
@@ -149,8 +141,9 @@ export const Renderer = ({
         y={y + yScale.bandwidth() / 2}
         textAnchor="end"
         dominantBaseline="middle"
-        fontSize={20}
+        fontSize={"1.5rem"}
         fill={"white"}
+        pointerEvents={"none"}
       >
         {name}
       </text>
@@ -162,12 +155,13 @@ export const Renderer = ({
     return (
       <text
         x={width/2 - 50}
-        y={boundsHeight + 50}
+        y={boundsHeight + 45}
         key={"BottomLabel"}
         textAnchor="middle"
         dominantBaseline="middle"
-        fontSize={30}
+        fontSize={"1.75rem"}
         fill={"white"}
+        pointerEvents={"none"}
       >
         Goals Scored by {x_Label.split(" ")[0]}
       </text>
@@ -179,13 +173,14 @@ export const Renderer = ({
     return (
       <text
         x={0}
-        y={height/2}
+        y={0}
         key={"SideLabel"}
         textAnchor="middle"
         dominantBaseline="middle"
-        transform="rotate(-90, 0,  250) translate(-150, -240)"
-        fontSize={30}
+        transform={`rotate(-90, 0,  0) translate(${-width*.5 + 42}, ${-42})`}
+        fontSize={"1.75rem"}
         fill={"white"}
+        pointerEvents={"none"}
       >
         Goals Scored by {y_Label.split(" ")[0]}
       </text>
@@ -201,8 +196,9 @@ export const Renderer = ({
         key={"TopLabel"}
         textAnchor="middle"
         dominantBaseline="middle"
-        fontSize={40}
+        fontSize={"2rem"}
         fill={"white"}
+        pointerEvents={"none"}
       >
         Heatmap of Score Frequency
       </text>
@@ -226,6 +222,4 @@ export const Renderer = ({
         </g>
       </svg>
   )
-
-  
 };

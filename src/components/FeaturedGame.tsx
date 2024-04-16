@@ -1,7 +1,5 @@
-import * as NHLLogos from "./Logos";
-import { GetLogo, convertTimeZone, getCityForTimeZone } from "../data";
-import moment from 'moment-timezone';
-import { formatInTimeZone, format } from "date-fns-tz";
+import { GetLogo, convertTimeZone } from "../data";
+import { formatInTimeZone } from "date-fns-tz";
 
 
 export default function FeaturedGame (game, key) {

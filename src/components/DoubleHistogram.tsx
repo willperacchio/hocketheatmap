@@ -1,14 +1,10 @@
-import { useState } from "react";
 import { HistogramRenderer } from "./HistogramRenderer";
-import { HistogramTooltip } from "./HistogramTooltip";
-import React, { useMemo } from "react";
-import Legend from "d3-color-legend";
 import * as d3 from "d3";
 
 
 export type DoubleHistogramProps = {
-  width: number;
-  height: number;
+  w: number;
+  h: number;
   s1_Label: string;
   s2_Label: string;
   s1: Number[];
@@ -27,12 +23,12 @@ export type HistogramInteractionData = {
   sValue: number;
 };
 
-export const DoubleHistogram = ({ s1_Label, s2_Label, s1, s2, mean1, mean2, stdev1, stdev2 }: DoubleHistogramProps) => {
+export const DoubleHistogram = ({ w, h, s1_Label, s2_Label, s1, s2, mean1, mean2, stdev1, stdev2 }: DoubleHistogramProps) => {
 
   // set the dimensions and margins of the graph
   const margin = {top: 10, right: 30, bottom: 60, left: 90},
-  width = 660 - margin.left - margin.right,
-  height = 600 - margin.top - margin.bottom;
+  width = w - margin.left - margin.right,
+  height = h - margin.top - margin.bottom;
 
   // X axis: scale and draw:
   const x = d3.scaleLinear().domain([-1, 12]).range([0, width]);
