@@ -44,13 +44,31 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
   }
 
+  function compareTimes(v1, v2) {
+    let n1 = v1.replace(":", " ").split(" ")
+    let t1 = Number(n1[0]) * 100 + Number(n1[1])
+    if (Number(n1[0]) !== 12 && n1[2] === "PM") {
+      t1 += 1200;
+    }
+    let n2 = v2.replace(":", " ").split(" ")
+    let t2 = Number(n2[0]) * 100 + Number(n2[1]);
+    if (Number(n2[0]) !== 12 && n2[2] === "PM") {
+      t2 += 1200;
+    }
+    // console.log(t1, t2)
+    return t1 > t2 ? -1 : 1;
+  }
+
   const columns: GridColDef[] = [
     { field: 'localDate', headerName: 'Date', valueGetter: (value, row) => 
         formatInTimeZone(row.scheduled, convertTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]), 'yyyy/MM/dd'), width: 150},
     { field: 'venue.time_zone', headerName: 'Time Zone', valueGetter: (value, row) => 
         "" + row["venue.time_zone"] + " (" + getCityForTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]) + ")", width: 150 },
-    { field: 'localStartTime', headerName: 'Local Start Time', valueGetter: (value, row) => 
-        formatInTimeZone(row.scheduled, convertTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]), 'h:mm a'), width: 150},
+    { field: 'localStartTime', headerName: 'Local Start Time', 
+        valueGetter: (value, row) => 
+        formatInTimeZone(row.scheduled, convertTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]), 'h:mm a'), 
+        sortComparator: (v1, v2, r1, r2) => compareTimes(v1, v2),
+        width: 150},
     { field: 'venue.name', headerName: 'Venue Name', width: 200 },
     { field: 'venue.city', headerName: 'Venue City', width: 150 },
     { field: 'venue.country', headerName: 'Venue Country', width: 100 },
@@ -81,9 +99,7 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
           columns={columns} 
           columnVisibilityModel={{scheduled: false}}
           pageSizeOptions={[25, 50, 100]}
-          getRowClassName={(params) =>
-            params.indexRelativeToCurrentPage % 2 === 0 ? 'Mui-even' : 'Mui-odd'
-          }
+          getRowClassName={(params) => params.indexRelativeToCurrentPage % 2 === 0 ? 'Mui-even' : 'Mui-odd'}
       />
       </div>
     )
