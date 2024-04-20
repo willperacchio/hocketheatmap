@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Filter ({filters_list, filters_readable, defaultChecked, handleChange, grid}) {
   if (filters_list === null || filters_list === undefined) {
     return;

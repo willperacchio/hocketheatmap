@@ -11,7 +11,6 @@ import Filter from "./components/Filter"
 
 function App() {
   const [width, setWidth] = useState(100);
-  const [height, setHeight] = useState(100);
 
   const homeScoreText = "Home Score";
   const awayScoreText = "Away Score";
@@ -142,7 +141,6 @@ function App() {
         // Depending on the layout, you may need to swap inlineSize with blockSize
         // https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentBoxSize
         setWidth(event[0].contentBoxSize[0].inlineSize);
-        setHeight(event[0].contentBoxSize[0].blockSize);
     });
 
     resizeObserver.observe(document.getElementById("right-side"));
@@ -150,7 +148,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-header">
+      <div className="app-body">
         <div className="head-row"><NHLLogos.NHL size={200}/><br/>NHL Interactive Heatmap</div>
         <span className="filters">    
           <div className="radio-filter">
@@ -197,8 +195,8 @@ function App() {
           <div>Average Margin of Victory: {stats["average_mov"]} ± {stats["stdev_mov"]}</div>
           <span className="double-histogram">
             <DoubleHistogram 
-              w={width*.5} 
-              h={width*.5} 
+              w={width*.45} 
+              h={width*.45} 
               s1={checks["home_away"] ? [...stats["home_points"]]: [...stats["loser_points"]]}
               s2={checks["home_away"] ? [...stats["away_points"]]: [...stats["winner_points"]]}
               s1_Label={checks["home_away"] ? homeScoreText: loserScoreText} 

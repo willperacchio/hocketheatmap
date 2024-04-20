@@ -1,5 +1,4 @@
 import { InteractionData } from "./Heatmap";
-import React from "react"
 
 type TooltipProps = {
   interactionData: InteractionData | null;
@@ -7,13 +6,12 @@ type TooltipProps = {
   height: number;
 };
 
-export const Tooltip = ({ interactionData, width, height }: TooltipProps) => {
+export const HeatmapTooltip = ({ interactionData, width, height }: TooltipProps) => {
   if (!interactionData) {
     return null;
   }
 
   return (
-    // Wrapper div: a rect on top of the viz area
     <div
       style={{
         width,
@@ -24,7 +22,6 @@ export const Tooltip = ({ interactionData, width, height }: TooltipProps) => {
         pointerEvents: "none"
       }}
     >
-      {/* The actual box with dark background */}
       <div
         className="tooltip"
         style={{

@@ -39,7 +39,7 @@ export const HistogramRenderer = ({
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
-  // Append the svg object to the body of the page
+  // Remove old
   d3.select("#histogram_" + id).select("svg").remove()
   
   // Append the svg object to the body of the page
@@ -53,13 +53,7 @@ export const HistogramRenderer = ({
   // Background
   svg.append("rect").attr("width", width + margin.left + margin.right).attr("height", height).attr("opacity", "1").attr("fill", "white");
 
-  // Bottom Axis
-  svg.append("g").attr("transform", `translate(0, ${height})`).call(d3.axisBottom(x)).style("font-size", "1.25rem").attr("pointer-events", "none");
-
-  // Left Axis
-  y.domain([0, maxFreq]);   // d3.hist has to be called before the Y axis obviously
-  svg.append("g").call(d3.axisLeft(y)).style("font-size", "1.25rem").attr("pointer-events", "none")
-
+  // Draw Histogram Rectangles
   svg.selectAll("rect")
     .data(bins)
     .enter()
@@ -74,7 +68,6 @@ export const HistogramRenderer = ({
     .style("fill", color)
     .style("opacity", 1)
     .on("mouseover", (e) => {
-      // console.log(e)
       if (e.fromElement && e.fromElement.__data__){
         setHoveredCell({
           label: label,
@@ -89,16 +82,6 @@ export const HistogramRenderer = ({
        } )
     .on("mouseleave", () => setHoveredCell(null) )
   
-  // Legend
-  svg.append("circle").attr("cx",.48*width + 5).attr("cy",30).attr("r", 6).style("fill", color).attr("pointer-events", "none")
-  svg.append("text").attr("x", .55*width).attr("y", 32).text(label).style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
-
-  svg.append("text").attr("x", .48*width).attr("y", 55).text("μ").style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
-  svg.append("text").attr("x", .55*width).attr("y", 55).text(`Mean: ${mean}`).style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
-
-  svg.append("text").attr("x", .48*width).attr("y", 78).text("σ").style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
-  svg.append("text").attr("x", .55*width).attr("y", 78).text(`Stdev: ±${stdev}`).style("font-size", "1.25rem").attr("alignment-baseline","middle").attr("pointer-events", "none")
-
   // Plot numbers above bars
   for (let i = 0; i <= 11; i++) {
     svg.append("text")
@@ -111,6 +94,64 @@ export const HistogramRenderer = ({
       .attr("text-anchor", "middle")
       .attr("pointer-events", "none")
   }
+
+  // Bottom Axis
+  svg.append("g").attr("transform", `translate(0, ${height})`).call(d3.axisBottom(x)).style("font-size", "1.25rem").attr("pointer-events", "none");
+
+  // Left Axis
+  y.domain([0, maxFreq]);   // d3.hist has to be called before the Y axis obviously
+  svg.append("g").call(d3.axisLeft(y)).style("font-size", "1.25rem").attr("pointer-events", "none")
+  
+  // Legend - Circle Color
+  svg.append("circle")
+    .attr("cx",.48*width + 5)
+    .attr("cy",30).attr("r", 6)
+    .style("fill", color)
+    .attr("pointer-events", "none")
+  
+  // Legend - Series Label
+  svg.append("text")
+    .attr("x", .55*width)
+    .attr("y", 32)
+    .text(label).style("font-size", "1.25rem")
+    .attr("alignment-baseline","middle")
+    .attr("pointer-events", "none")
+
+  // Legend - Mean Symbol
+  svg.append("text")
+    .attr("x", .48*width)
+    .attr("y", 55)
+    .text("μ")
+    .style("font-size", "1.25rem")
+    .attr("alignment-baseline","middle")
+    .attr("pointer-events", "none")
+  
+  // Legend - Mean Text
+  svg.append("text")
+    .attr("x", .55*width)
+    .attr("y", 55)
+    .text(`Mean: ${mean}`)
+    .style("font-size", "1.25rem")
+    .attr("alignment-baseline","middle")
+    .attr("pointer-events", "none")
+
+  // Legend - Standard Deviation Symbol
+  svg.append("text")
+    .attr("x", .48*width)
+    .attr("y", 78)
+    .text("σ")
+    .style("font-size", "1.25rem")
+    .attr("alignment-baseline","middle")
+    .attr("pointer-events", "none")
+  
+  // Legend - Standard Deviation Symbol
+  svg.append("text")
+    .attr("x", .55*width)
+    .attr("y", 78)
+    .text(`Stdev: ±${stdev}`)
+    .style("font-size", "1.25rem")
+    .attr("alignment-baseline","middle")
+    .attr("pointer-events", "none")
 
   // Bottom Label
   svg.append("text")

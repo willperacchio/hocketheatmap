@@ -14,7 +14,7 @@ type RendererProps = {
   setHoveredCell: (hoveredCell: InteractionData | null) => void;
 };
 
-export const Renderer = ({width, height, x_Label, y_Label, data, max, setHoveredCell}: RendererProps) => {
+export const HeatmapRenderer = ({width, height, x_Label, y_Label, data, max, setHoveredCell}: RendererProps) => {
   // The bounds (=area inside the axis) is calculated by subtracting the margins
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;

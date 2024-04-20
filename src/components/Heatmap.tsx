@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Renderer } from "./Renderer";
-import { Tooltip } from "./Tooltip";
+import { HeatmapRenderer } from "./HeatmapRenderer";
+import { HeatmapTooltip } from "./HeatmapTooltip";
 
 
 export type HeatmapProps = {
@@ -27,7 +27,7 @@ export const Heatmap = ({ width, height, x_Label, y_Label, data, max }: HeatmapP
 
   return (
     <div style={{ position: "relative" }}>
-      <Renderer
+      <HeatmapRenderer
         width={width}
         height={height}
         x_Label={x_Label}
@@ -36,7 +36,7 @@ export const Heatmap = ({ width, height, x_Label, y_Label, data, max }: HeatmapP
         max={max}
         setHoveredCell={setHoveredCell}
       />
-      <Tooltip interactionData={hoveredCell} width={width} height={height} />
+      <HeatmapTooltip interactionData={hoveredCell} width={width} height={height} />
     </div>
   );
 };

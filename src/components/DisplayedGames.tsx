@@ -80,7 +80,7 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
   ];
 
   return (
-      <div className="all_displayed_games">
+      <div className="all-displayed-games">
         <div className="bottom-titles">
           Random Games Matching Criteria:
         </div>

@@ -15,7 +15,7 @@ export default function TeamFilter ({filters_list, defaultChecked, handleChange,
                   type="checkbox" 
                   defaultChecked={defaultChecked} 
                   onChange={handleChange}/>
-              <span className="team_logoname">
+              <span className="team-logo-name">
                <span className="team_logo">{GetLogo(a, size)}</span>
               </span>
           </span>
