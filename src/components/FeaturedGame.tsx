@@ -4,7 +4,7 @@ import { formatInTimeZone } from "date-fns-tz";
 
 export default function FeaturedGame (game, key) {
     if (game) {
-        let tz = formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'MMMM yyyy, dd h:mma')
+        let tz = formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'MMMM d, yyyy, h:mm a z')
         return (
             <div key={"game_" + key} className="featured_game">
                 <span className="featured_game_logo_left">

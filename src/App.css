@@ -20,16 +20,27 @@
   display: inline-block;
 }
 
-.filter {
-  font-size: 1.5rem;
-  color: white;
-  padding: 10px;
+button.filter {
+  background-color: white !important;
+  color: black;
+  border: 2px solid black;
+  font-size: 1.4rem;
   border-radius: 5px;
-  background-color: lightseagreen;
   display: inline-grid;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+button.filter.Mui-selected {
+  background-color: rgb(8, 76, 142) !important;
+  color: white;
+}
+
+div.filter {
+  background-color: rgb(8, 76, 142) !important;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .filter_row {
@@ -46,6 +57,20 @@
   text-align: left;
 }
 
+span.filter.team-box.logo {
+  width: 100%;
+  height: 100%;
+  opacity: 100%;
+}
+
+.team-button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 2px black;
+  border-radius: 5px;
+}
+
 .double-histogram {
   width: 100%;
 }
@@ -56,11 +81,22 @@
   width: 100%;
 }
 
-.heatmap {
+.right-side {
   display: flex;
   flex-direction: column;
   width: 40%;
   margin-right: 2%;
+}
+
+.summary-stats {
+  margin-top: 35px;
+  width: 80%;
+  margin-bottom: 35px;
+  text-align: left;
+  align-self: center;
+  display: grid;
+  gap: 10px;
+  font-size: 1.4rem;
 }
 
 
@@ -128,7 +164,9 @@ div.radio-filter {
 .featured_game {
   width: 100%;
   display: flex;
-  background-color: cornflowerblue;
+  background-color: rgb(8, 76, 142);
+  border: 2px solid black;
+  border-radius: 5px;
   margin-bottom: 0.25rem;
 }
 
@@ -192,6 +230,23 @@ div.radio-filter {
   color: white;
 }
 
+.MuiDataGrid-footerContainer,
+.MuiToolbar-root {
+  color: white;
+  font-weight: bold;
+}
+
+.MuiDataGrid-columnHeader {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(8, 76, 142) !important;
+}
+
+.MuiToolbar-root .MuiTablePagination-selectLabel,
+.MuiToolbar-root .MuiInputBase-root,
+p.MuiTablePagination-displayedRows.css-levciy-MuiTablePagination-displayedRows {
+  font-weight: bold;
+}
 
 .two_column {
   grid-template-columns: repeat(2, 1fr);

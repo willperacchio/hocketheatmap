@@ -72,10 +72,10 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
     { field: 'venue.name', headerName: 'Venue Name', width: 200 },
     { field: 'venue.city', headerName: 'Venue City', width: 150 },
     { field: 'venue.country', headerName: 'Venue Country', width: 100 },
-    { field: 'away_points', headerName: 'Away Score', width: 100, type: "number" },
     { field: 'away.name', headerName: 'Away Team', width: 150 },
-    { field: 'home_points', headerName: 'Home Score', width: 100, type: "number" },
+    { field: 'away_points', headerName: 'Away Score', width: 100, type: "number" },
     { field: 'home.name', headerName: 'Home Team', width: 150 },
+    { field: 'home_points', headerName: 'Home Score', width: 100, type: "number" },
     { field: 'scheduled', headerName: 'Scheduled Time' },
   ];
 
@@ -90,7 +90,7 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
         <div className="bottom-titles">
           All Games Matching Criteria:
         </div>
-        <DataGrid sx={{ color: "black", minHeight: "100px", backgroundColor: "cornflowerblue", fontWeight: "400"}}
+        <DataGrid sx={{ color: "black", minHeight: "100px", backgroundColor: "rgb(8, 76, 142)", fontWeight: "400"}}
           density="compact" 
           initialState={{
             pagination: {paginationModel: { pageSize: 25 }}
