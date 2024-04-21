@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "NHL Interactive Heatmap",
+  "name": "Interactive Hockey Heatmap of NHL Games",
   "icons": [
     {
       "src": "favicon.ico",
