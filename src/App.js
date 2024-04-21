@@ -37,8 +37,7 @@ function App() {
   let countries_readable = {"USA": "United States 🇺🇸", "CAN": "Canada 🇨🇦", "SWE": "Sweden 🇸🇪", "FIN": "Finland 🇫🇮", "CZE": "Czechia 🇨🇿" }
 
   let timezones_list = ["US/Eastern", "US/Central", "US/Mountain", "US/Pacific", "Europe/Vienna", "Europe/Sofia"]
-  let timezones_readable = {}
-  timezones_list.map((tz) => timezones_readable[tz] = tz)
+  let timezones_readable = {"US/Eastern": "US/Eastern", "US/Central": "US/Central", "US/Mountain": "US/Mountain", "US/Pacific": "US/Pacific", "Europe/Vienna": "EU/Vienna", "Europe/Sofia": "EU/Sofia"}
 
   let start_times_list = [
     "11:00 AM", "11:30 AM", 
@@ -92,7 +91,7 @@ function App() {
 
     console.log(e)
 
-    if (e.type=="click") {
+    if (e.type === "click") {
       if (teams_list.indexOf(a) !== -1) {
         newChecks["teams"][a] = !newChecks["teams"][a]
       } else if (years_list.indexOf(a) !== -1) {
@@ -138,11 +137,8 @@ function App() {
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((event) => {
-        // Depending on the layout, you may need to swap inlineSize with blockSize
-        // https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentBoxSize
         setWidth(event[0].contentBoxSize[0].inlineSize);
     });
-
     resizeObserver.observe(document.getElementById("right-side"));
 });
 
@@ -150,9 +146,8 @@ function App() {
     <div className="App">
       <div className="app-body">
         <div className="head-row">
-          <NHLLogos.NHL size={200}/>
-          <br/>
-          NHL Interactive Heatmap
+          <div><NHLLogos.NHL size={200}/></div>
+          <div>NHL Interactive Heatmap</div>
         </div>
         <Filters 
           width={width}
@@ -167,7 +162,7 @@ function App() {
           start_times_list={start_times_list} start_times_readable={start_times_readable}
           teams_list={teams_list}
           />
-        <span className="right-side" id="right-side">
+        <div className="right-side" id="right-side">
           <Heatmap 
             data={data} 
             width={width * 0.9} 
@@ -178,11 +173,11 @@ function App() {
             />
           <div className="summary-stats two_column">
             <div>Number of Eligible Games:</div>
-            <div>{data.reduce((n, coord) => n + coord["value"], 0)}</div>
+            <div>{data.reduce((n, coord) => n + coord["value"], 0)} games</div>
             <div>Most Frequent Outcome:</div>
             <div>{getMostFrequentOutcome(checks["home_away"])}</div>
             <div>Average Margin of Victory:</div>
-            <div>{stats["average_mov"]} ± {stats["stdev_mov"]}</div>
+            <div>{stats["average_mov"]} ± {stats["stdev_mov"]}σ goals</div>
           </div>
           <span className="double-histogram">
             <DoubleHistogram 
@@ -198,10 +193,26 @@ function App() {
               stdev2={checks["home_away"] ? stats["stdev_away"] : stats["stdev_winner"]}
               />
           </span>
-        </span>
-        <span className="displayed-games">
-          <DisplayedGames displayed_games={displayGames} />
-        </span>
+        </div>
+        <div>
+          <div className="displayed-games">
+            <DisplayedGames displayed_games={displayGames} />
+          </div>
+          <div className="bottom">
+            <div>
+              This project is intended solely for non-commercial fan use. All data obtained via <a href="https://developer.sportradar.com/">SportRadar</a>.
+            </div>
+            <div>
+              All logos are property of the <a href="https://www.nhl.com/">National Hockey League (NHL)</a> and affiliates. 
+            </div>
+            <div>
+              React versions of the Logos found <a href="https://github.com/BradMcGonigle/react-nhl-logos">here</a> - give it a like!
+            </div>
+            <div>
+              <a href="https://github.com/willperacchio/hockeyheatmap">Link to Source Code</a>. Made by: <a href="https://github.com/willperacchio">@willperacchio</a>.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

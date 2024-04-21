@@ -55,7 +55,7 @@ export const DoubleHistogram = ({ w, h, s1_Label, s2_Label, s1, s2, mean1, mean2
         width={width}
         height={height}
         margin={margin}
-        color="#757de8"
+        color="rgb(131, 206, 193)"
         mean={mean1}
         stdev={stdev1}
       />
@@ -70,7 +70,7 @@ export const DoubleHistogram = ({ w, h, s1_Label, s2_Label, s1, s2, mean1, mean2
         width={width}
         height={height}
         margin={margin}
-        color="#ff7961"
+        color="rgb(17, 109, 172)"
         mean={mean2}
         stdev={stdev2}
       />

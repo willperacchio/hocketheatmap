@@ -52,8 +52,7 @@ div.filter {
 
 .filter-descriptor {
   font-size: 2rem;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: 5px;
   text-align: left;
 }
 
@@ -79,6 +78,10 @@ span.filter.team-box.logo {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+div.MuiInputBase-root.MuiOutlinedInput-root > svg{
+  font-size: 4rem;
 }
 
 .right-side {
@@ -142,11 +145,14 @@ div.radio-filter {
 
 .displayed-games {
   margin-top: 20px;
+  justify-content: center;
+  display: flex;
 }
 
 .all-displayed-games {
-  width:100%;
+  width:80%;
   margin-bottom: 100px;
+  display: grid;
 }
 
 .bottom-titles {
@@ -274,4 +280,17 @@ p.MuiTablePagination-displayedRows.css-levciy-MuiTablePagination-displayedRows {
 
 .eight_column {
   grid-template-columns: repeat(8, 1fr);
+}
+
+.bottom {
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+
+.bottom div {
+  margin: 1rem;
+}
+
+a {
+  color: white;
 }

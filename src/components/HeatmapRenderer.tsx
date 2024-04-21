@@ -2,8 +2,6 @@ import { useMemo } from "react";
 import * as d3 from "d3";
 import { InteractionData } from "./Heatmap";
 
-const MARGIN = { top: 50, right: 50, bottom: 60, left: 60 };
-
 type RendererProps = {
   width: number;
   height: number;
@@ -16,6 +14,7 @@ type RendererProps = {
 
 export const HeatmapRenderer = ({width, height, x_Label, y_Label, data, max, setHoveredCell}: RendererProps) => {
   // The bounds (=area inside the axis) is calculated by subtracting the margins
+  const MARGIN = { top: 50, right: 50, bottom: 60, left: 60 };
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
@@ -28,7 +27,7 @@ export const HeatmapRenderer = ({width, height, x_Label, y_Label, data, max, set
       .range([0, boundsWidth])
       .domain(allXGroups)
       .padding(0.01);
-  }, [data, width]);
+  }, [allXGroups, boundsWidth]);
 
   const yScale = useMemo(() => {
     return d3
@@ -36,190 +35,148 @@ export const HeatmapRenderer = ({width, height, x_Label, y_Label, data, max, set
       .range([boundsHeight, 0])
       .domain(allYGroups)
       .padding(0.01);
-  }, [data, height]);
+  }, [allYGroups, boundsHeight]);
+
+  // Remove old
+  d3.select("#heatmap").select("svg").remove()
+
+  // Append the svg object to the body of the page
+  const svg = d3.select("#heatmap")
+    .append("svg")
+    .attr("width", width + MARGIN.left + MARGIN.right)
+    .attr("height", height + MARGIN.top + MARGIN.bottom)
+    .append("g")
+    .attr("transform", `translate(${MARGIN.left},${MARGIN.top})`);
 
   var colorScale = d3.scaleSequentialSymlog([0, max], d3.interpolateGnBu)
 
-  const dataLabels  = data.map((d, i) => {
-    const x = xScale(d.x);
-    const y = yScale(d.y);
+  // Build the Squares and Numbers on Top of Squares
+  for (let i = 0; i < data.length; i++) {
+    let d = data[i];
+    let x = xScale(d.x);
+    let y = yScale(d.y);
 
     if (d.value === null || !x || !y) {
-        return;
+      continue;
     }
 
-    return (
-        <text
-            key={"text_x_" + d.x + "_y_" + d.y}
-            x={xScale(d.x) + xScale.bandwidth()/2}
-            y={yScale(d.y) + yScale.bandwidth()/2 + + yScale.bandwidth()/20}
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fontSize={"1.5rem"}
-            fontWeight={"bold"}
-            fill={"black"}
-            pointerEvents={"none"}
-        >
-            {d.value}
-        </text>
-    )
-  });
+    // Build Squares
+    svg.append("rect")
+      .attr("key", i)
+      .attr("r", 2)
+      .attr("x", x)
+      .attr("y", y)
+      .attr("width", xScale.bandwidth())
+      .attr("height", yScale.bandwidth())
+      .attr("fill", colorScale(d.value))
+      .attr("rx", 5)
+      .attr("stroke", "white")
+      .on("mouseenter", (e) => {
+        setHoveredCell({
+          xLabel: x_Label,
+          x: d.x,
+          yLabel: y_Label,
+          y: d.y,
+          xPos: x + xScale.bandwidth() + MARGIN.left,
+          yPos: y + xScale.bandwidth() / 2 + MARGIN.top,
+          value: Math.round(d.value * 100) / 100,
+        });
+      })
+      .on("mouseleave", () => setHoveredCell(null))
+      .attr("cursor", "pointer")
 
-    
-  // Build the rectangles
-  const allShapes = data.map((d, i) => {
-    const x = xScale(d.x);
-    const y = yScale(d.y);
+    // Build Number
+    svg.append("text")
+      .text(d.value)
+      .attr("key", "text_x_" + d.x + "_y_" + d.y)
+      .attr("x", xScale(d.x) + xScale.bandwidth()/2)
+      .attr("y", yScale(d.y) + yScale.bandwidth()/2 + + yScale.bandwidth()/20)
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "1.5rem")
+      .attr("font-weight", "bold")
+      .attr("fill", "black")
+      .attr("pointer-events", "none")
+  }
 
-    if (d.value === null || !x || !y) {
-      return;
-    }
-
-    return (
-      <rect
-        key={i}
-        r={2}
-        x={xScale(d.x)}
-        y={yScale(d.y)}
-        width={xScale.bandwidth()}
-        height={yScale.bandwidth()}
-        opacity={1}
-        fill={colorScale(d.value)}
-        rx={5}
-        stroke={"white"}
-        onMouseEnter={(e) => {
-          setHoveredCell({
-            xLabel: x_Label,
-            x: d.x,
-            yLabel: y_Label,
-            y: d.y,
-            xPos: x + xScale.bandwidth() + MARGIN.left,
-            yPos: y + xScale.bandwidth() / 2 + MARGIN.top,
-            value: Math.round(d.value * 100) / 100,
-          });
-        }}
-        onMouseLeave={() => setHoveredCell(null)}
-        cursor="pointer"
-      />
-    );
-  });
-
-  const xLabels = allXGroups.map((name, i) => {
-    const x = xScale(name);
-
+  // X Axis Labels
+  for (let i = 0; i < allXGroups.length; i++) {
+    let name = allXGroups[i]
+    let x = xScale(name);
     if (!x) {
       return null;
     }
 
-    return (
-      <text
-        key={i}
-        x={x + xScale.bandwidth() / 2}
-        y={boundsHeight + 15}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize={"1.5rem"}
-        fill={"white"}
-        pointerEvents={"none"}
-      >
-        {name}
-      </text>
-    );
-  });
+    svg.append("text")
+      .text(name)
+      .attr("key", "hm_x_" + i)
+      .attr("x", x + xScale.bandwidth() / 2)
+      .attr("y", boundsHeight + 15)
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "1.5rem")
+      .attr("fill", "white")
+      .attr("pointer-events", "none")
+  }
 
-  const yLabels = allYGroups.map((name, i) => {
-    const y = yScale(name);
-
+  // Y Axis Labels
+  for (let i = 0; i < allYGroups.length; i++) {
+    let name = allYGroups[i]
+    let y = yScale(name);
     if (!y) {
       return null;
     }
 
-    return (
-      <text
-        key={i}
-        x={-6}
-        y={y + yScale.bandwidth() / 2}
-        textAnchor="end"
-        dominantBaseline="middle"
-        fontSize={"1.5rem"}
-        fill={"white"}
-        pointerEvents={"none"}
-      >
-        {name}
-      </text>
-    );
-  });
+    svg.append("text")
+      .text(name)
+      .attr("key", "hm_y_" + i)
+      .attr("x", -6)
+      .attr("y", y + yScale.bandwidth() / 2)
+      .attr("text-anchor", "end")
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "1.5rem")
+      .attr("fill", "white")
+      .attr("pointer-events", "none")
+  }
 
   // Bottom Label
-  const bottomLabel = [0].map((d, i) => {
-    return (
-      <text
-        x={width/2 - 50}
-        y={boundsHeight + 45}
-        key={"BottomLabel"}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize={"1.75rem"}
-        fill={"white"}
-        pointerEvents={"none"}
-      >
-        Goals Scored by {x_Label.split(" ")[0]}
-      </text>
-    )
-  });
+  svg.append("text")
+    .text("Goals Scored by " + x_Label.split(" ")[0])
+    .attr("key", "hm_bottom_label")
+    .attr("x", width/2 - 50)
+    .attr("y", boundsHeight + 45)
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
+    .attr("font-size", "1.75rem")
+    .attr("fill", "white")
+    .attr("pointer-events", "none")
 
   // Side Label
-  const sideLabel = [0].map((d, i) => {
-    return (
-      <text
-        x={0}
-        y={0}
-        key={"SideLabel"}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        transform={`rotate(-90, 0,  0) translate(${-width*.5 + 42}, ${-42})`}
-        fontSize={"1.75rem"}
-        fill={"white"}
-        pointerEvents={"none"}
-      >
-        Goals Scored by {y_Label.split(" ")[0]}
-      </text>
-    )
-  });
+  svg.append("text")
+    .text("Goals Scored by " + x_Label.split(" ")[0])
+    .attr("key", "hm_side_label")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("text-anchor", "middle")
+    .attr("transform", `rotate(-90, 0,  0) translate(${-width*.5 + 42}, ${-42})`)
+    .attr("dominant-baseline", "middle")
+    .attr("font-size", "1.75rem")
+    .attr("fill", "white")
+    .attr("pointer-events", "none")
 
   // Top Label
-  const heatmapLabel = [0].map((d, i) => {
-    return (
-      <text
-        x={width/2 - 50}
-        y={-30}
-        key={"TopLabel"}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize={"2rem"}
-        fill={"white"}
-        pointerEvents={"none"}
-      >
-        Heatmap of Score Frequency
-      </text>
-    )
-  });  
+  svg.append("text")
+    .text("Heatmap of Score Frequency")
+    .attr("key", "hm_side_label")
+    .attr("x", width/2 - 50)
+    .attr("y", -30)
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
+    .attr("font-size", "2rem")
+    .attr("fill", "white")
+    .attr("pointer-events", "none")
 
     return (
-      <svg width={width} height={height}>
-        <g
-          width={boundsWidth}
-          height={boundsHeight}
-          transform={`translate(${[MARGIN.left, MARGIN.top].join(",")})`}
-        >
-          {allShapes}
-          {xLabels}
-          {yLabels}
-          {heatmapLabel}
-          {dataLabels}
-          {bottomLabel}
-          {sideLabel}
-        </g>
-      </svg>
+      <svg width={width} height={height} id={"heatmap"}> </svg>
   )
 };

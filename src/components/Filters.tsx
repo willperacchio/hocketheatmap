@@ -1,6 +1,6 @@
 import Filter from "./Filter";
 import TeamFilter from "./TeamFilter";
-import { InputLabel, Select, MenuItem } from "@mui/material";
+import { Select, MenuItem } from "@mui/material";
 
 
 export default function Filters ({width, checks, handleChange, 
