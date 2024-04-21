@@ -13,6 +13,7 @@ export type DoubleHistogramProps = {
   mean2: number;
   stdev1: number;
   stdev2: number;
+  max: number;
 };
 
 export type HistogramInteractionData = {
@@ -23,7 +24,7 @@ export type HistogramInteractionData = {
   sValue: number;
 };
 
-export const DoubleHistogram = ({ w, h, s1_Label, s2_Label, s1, s2, mean1, mean2, stdev1, stdev2 }: DoubleHistogramProps) => {
+export const DoubleHistogram = ({ w, h, s1_Label, s2_Label, s1, s2, mean1, mean2, stdev1, stdev2, max }: DoubleHistogramProps) => {
 
   // set the dimensions and margins of the graph
   const margin = {top: 10, right: 30, bottom: 60, left: 90},
@@ -31,7 +32,7 @@ export const DoubleHistogram = ({ w, h, s1_Label, s2_Label, s1, s2, mean1, mean2
   height = h - margin.top - margin.bottom;
 
   // X axis: scale and draw:
-  const x = d3.scaleLinear().domain([-1, 12]).range([0, width]);
+  const x = d3.scaleLinear().domain([-1, max]).range([0, width]);
 
   // Get Histogram for Data
   const histogram = d3.histogram().value((d) => d).domain(x.domain()).thresholds(x.ticks(13));

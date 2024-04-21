@@ -1,9 +1,11 @@
 import * as NHLLogos from "./components/Logos";
 import { formatInTimeZone } from "date-fns-tz";
 
+export const MAX_POINTS = 12;
+
 export function DataViz (og) {
-  const nCol = 12;
-  const nRow = 12;
+  const nCol = MAX_POINTS;
+  const nRow = MAX_POINTS;
 
   let values = {};
 
@@ -65,7 +67,7 @@ export function DataProcessing (data_og, checks) {
                   if (country[game["venue"]["country"]] // Check country
                     && timezone[game["venue"]["time_zone"]] // check timezone
                     && start_time[formatInTimeZone(game.scheduled, convertTimeZone(game.venue.time_zone, game.venue.country, game.venue.state), 'h:mm a')]) { // Check start time
-                    if (game["status"] === "closed") {
+                    if (game["status"] === "closed" || game["status"] == "complete") {
                       games.push(game)
                       if (homeAway) {
                         og.push([game["home_points"], game["away_points"]])

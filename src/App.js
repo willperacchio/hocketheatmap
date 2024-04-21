@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import { Heatmap } from './components/Heatmap';
 import { DoubleHistogram } from "./components/DoubleHistogram";
-import { DataViz, DataProcessing } from "./data";
+import { DataViz, DataProcessing, MAX_POINTS } from "./data";
 import nhl from "./NHL.json"
 import * as NHLLogos from "./components/Logos";
 import DisplayedGames from "./components/DisplayedGames";
@@ -47,9 +47,9 @@ function App() {
     "3:00 PM", "3:30 PM", 
     "4:00 PM", "4:15 PM", "4:20 PM", "4:30 PM", "4:45 PM",
     "5:00 PM", "5:30 PM", 
-    "6:00 PM", "6:30 PM", 
+    "6:00 PM", "6:30 PM", "6:45 PM", 
     "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM",
-    "8:00 PM", "8:30 PM", "8:45 PM", "8:57 PM",
+    "8:00 PM", "8:15 PM", "8:30 PM", "8:45 PM", "8:57 PM",
     "9:00 PM"]
   let start_times_readable = {}
   start_times_list.map((st) => start_times_readable[st] = st)
@@ -70,7 +70,7 @@ function App() {
   setDefChecks(defChecks, "timezones", timezones_list, defaultChecked)
   setDefChecks(defChecks, "start_times", start_times_list, defaultChecked)
   
-  defChecks["years"]["2022"] = true;
+  defChecks["years"]["2023"] = true;
 
   const [checks, setChecks] = useState(defChecks);
   let eligibleGames = DataProcessing(nhl, defChecks)
@@ -88,8 +88,6 @@ function App() {
 
   function handleChange (e, a) {
     let newChecks = {...checks}
-
-    console.log(e)
 
     if (e.type === "click") {
       if (teams_list.indexOf(a) !== -1) {
@@ -109,7 +107,6 @@ function App() {
       } else if (start_times_list.indexOf(a) !== -1) {
         newChecks["start_times"][a] = !newChecks["start_times"][a]
       } else if (e.target.value === 0 || e.target.value === 1) {
-        console.log("HERE")
         newChecks["home_away"] = e.target.value ? false : true
       }
     }
@@ -148,6 +145,7 @@ function App() {
         <div className="head-row">
           <div><NHLLogos.NHL size={200}/></div>
           <div>NHL Interactive Heatmap</div>
+          <div className="subhead">Use the filters on the left to modify the graphics on the right</div>
         </div>
         <Filters 
           width={width}
@@ -191,6 +189,7 @@ function App() {
               mean2={checks["home_away"] ? stats["average_away"] : stats["average_winner"]}
               stdev1={checks["home_away"] ? stats["stdev_home"] : stats["stdev_loser"]}
               stdev2={checks["home_away"] ? stats["stdev_away"] : stats["stdev_winner"]}
+              max={MAX_POINTS}
               />
           </span>
         </div>
