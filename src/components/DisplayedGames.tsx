@@ -76,6 +76,9 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
     { field: 'away_points', flex: 1,  headerName: 'Away Score', width: 100, type: "number" },
     { field: 'home.name', flex: 1,  headerName: 'Home Team', width: 150 },
     { field: 'home_points', flex: 1,  headerName: 'Home Score', width: 100, type: "number" },
+    { field: 'mov', flex: 1,  headerName: 'Margin of Victory', valueGetter: (value, row) => 
+      Math.abs(row.away_points - row.home_points),
+      width: 100, type: "number" },
     { field: 'scheduled', flex: 1,  headerName: 'Scheduled Time' },
   ];
 
