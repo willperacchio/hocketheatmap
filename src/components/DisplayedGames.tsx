@@ -60,23 +60,23 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
   }
 
   const columns: GridColDef[] = [
-    { field: 'localDate', headerName: 'Date', valueGetter: (value, row) => 
+    { field: 'localDate',  flex: 1, headerName: 'Date', valueGetter: (value, row) => 
         formatInTimeZone(row.scheduled, convertTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]), 'yyyy/MM/dd'), width: 150},
-    { field: 'venue.time_zone', headerName: 'Time Zone', valueGetter: (value, row) => 
+    { field: 'venue.time_zone',  flex: 1, headerName: 'Time Zone', valueGetter: (value, row) => 
         "" + row["venue.time_zone"] + " (" + getCityForTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]) + ")", width: 150 },
-    { field: 'localStartTime', headerName: 'Local Start Time', 
+    { field: 'localStartTime',  flex: 1, headerName: 'Local Start Time', 
         valueGetter: (value, row) => 
         formatInTimeZone(row.scheduled, convertTimeZone(row["venue.time_zone"], row["venue.country"], row["venue.state"]), 'h:mm a'), 
         sortComparator: (v1, v2, r1, r2) => compareTimes(v1, v2),
         width: 150},
-    { field: 'venue.name', headerName: 'Venue Name', width: 200 },
-    { field: 'venue.city', headerName: 'Venue City', width: 150 },
-    { field: 'venue.country', headerName: 'Venue Country', width: 100 },
-    { field: 'away.name', headerName: 'Away Team', width: 150 },
-    { field: 'away_points', headerName: 'Away Score', width: 100, type: "number" },
-    { field: 'home.name', headerName: 'Home Team', width: 150 },
-    { field: 'home_points', headerName: 'Home Score', width: 100, type: "number" },
-    { field: 'scheduled', headerName: 'Scheduled Time' },
+    { field: 'venue.name', flex: 1, headerName: 'Venue Name', width: 200 },
+    { field: 'venue.city',  flex: 1, headerName: 'Venue City', width: 150 },
+    { field: 'venue.country',  flex: 1, headerName: 'Venue Country', width: 100 },
+    { field: 'away.name',  flex: 1, headerName: 'Away Team', width: 150 },
+    { field: 'away_points', flex: 1,  headerName: 'Away Score', width: 100, type: "number" },
+    { field: 'home.name', flex: 1,  headerName: 'Home Team', width: 150 },
+    { field: 'home_points', flex: 1,  headerName: 'Home Score', width: 100, type: "number" },
+    { field: 'scheduled', flex: 1,  headerName: 'Scheduled Time' },
   ];
 
   return (
@@ -94,6 +94,10 @@ export default function DisplayedGames (displayed_games: Array<Object>) {
           density="compact" 
           initialState={{
             pagination: {paginationModel: { pageSize: 25 }}
+          }}
+          autosizeOptions={{
+            includeOutliers: true,
+            includeHeaders: false
           }}
           rows={games_to_display.map((game, key) => flatten(game))} 
           columns={columns} 
